@@ -104,7 +104,8 @@ var GlobWeb = GlobWeb || {};
 		"HEALPixBase.js",
 		"Long.js",
 		"InertiaAnimation.js",
-		"OpenSearchLayer.js"
+		"KMLParser.js",
+		"AnotherKMLParser.js"
 		];
 
 	// use "parser-inserted scripts" for guaranteed execution order

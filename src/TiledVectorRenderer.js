@@ -319,9 +319,15 @@ GlobWeb.TiledVectorRenderer.prototype.render = function( visibleTiles )
 					{
 						currentStyle = renderable.bucket.style;
 						gl.lineWidth( currentStyle.strokeWidth );
-						gl.uniform4f( this.program.uniforms["color"], currentStyle.strokeColor[0], currentStyle.strokeColor[1], currentStyle.strokeColor[2], 
-							currentStyle.strokeColor[3] * renderable.bucket.layer._opacity );
-							
+						if(currentStyle.fill){
+							gl.uniform4f( this.program.uniforms["color"], currentStyle.fillColor[0], currentStyle.fillColor[1], currentStyle.fillColor[2], 
+									currentStyle.fillColor[3] * renderable.bucket.layer._opacity );
+						}
+						else{
+							gl.uniform4f( this.program.uniforms["color"], currentStyle.strokeColor[0], currentStyle.strokeColor[1], currentStyle.strokeColor[2], 
+									currentStyle.strokeColor[3] * renderable.bucket.layer._opacity );
+						}
+						
 						// TODO : manage opacity
 					}
 					
@@ -346,9 +352,15 @@ GlobWeb.TiledVectorRenderer.prototype.render = function( visibleTiles )
 					{
 						currentStyle = renderable.bucket.style;
 						gl.lineWidth( currentStyle.strokeWidth );
-						gl.uniform4f( this.program.uniforms["color"], currentStyle.strokeColor[0], currentStyle.strokeColor[1], currentStyle.strokeColor[2], 
-							currentStyle.strokeColor[3] * renderable.bucket.layer._opacity );
-							
+						if(currentStyle.fill){
+							gl.uniform4f( this.program.uniforms["color"], currentStyle.fillColor[0], currentStyle.fillColor[1], currentStyle.fillColor[2], 
+									currentStyle.fillColor[3] * renderable.bucket.layer._opacity );
+						}
+						else{
+							gl.uniform4f( this.program.uniforms["color"], currentStyle.strokeColor[0], currentStyle.strokeColor[1], currentStyle.strokeColor[2], 
+									currentStyle.strokeColor[3] * renderable.bucket.layer._opacity );
+						}
+						
 						// TODO : manage opacity
 					}
 					
