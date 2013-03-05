@@ -21,8 +21,8 @@
 					layers: "BlueMarble,esat" } );
 		globe.setBaseImagery( bmlayer );
 		
-		//var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.telespazio.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
-		//globe.setBaseElevation( elevationLayer );
+		var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.telespazio.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
+		globe.setBaseElevation( elevationLayer );
 		
 		var vectorLayer = new GlobWeb.VectorLayer();
 
@@ -37,7 +37,7 @@
 		};
 		//xhr.open("GET", "world-borders/doc.kml");
 		//xhr.open("GET", "doc.kml");
-		xhr.open("GET", "FranceIran.kml");
+		xhr.open("GET", "pays.kml");
 		//xhr.open("GET", "testUS.kml");
 		xhr.send();
 		
@@ -58,7 +58,7 @@
 
 <body onload="webGLStart();">
 	<h1>Glob Web</h1>
-    <canvas id="GlobWebCanvas" style="border: none;" width="800" height="450"></canvas> 
+    <canvas id="GlobWebCanvas" style="border: none;" width="1300" height="750"></canvas> 
   	<br/>
 	<div id="fps"><span style="font-weight:bold">FPS : 0</span></div>
 </body>

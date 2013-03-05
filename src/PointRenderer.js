@@ -259,10 +259,15 @@ GlobWeb.PointRenderer.prototype.getOrCreateBucket = function(layer,style)
 	}
 	else if ( style['iconUrl'] )
 	{
+		//I added this so icon won't be colored by the "fillColor" default attribute
+		style.fillColor = [1,1,1,1];
+		
 		var image = new Image();
 		var self = this;
 		image.onload = function() {self._buildTextureFromImage(bucket,image); self.renderContext.requestFrame(); }
 		image.onerror = function() { self._buildDefaultTexture(bucket); }
+
+		image.crossOrigin='';
 		image.src = style.iconUrl;
 	}
 	else if ( style['icon'] )

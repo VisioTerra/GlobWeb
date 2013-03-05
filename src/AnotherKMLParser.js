@@ -29,6 +29,8 @@ GlobWeb.AnotherKMLParser = (function()
 				
 	var styles = {};
 	
+	var fetched = {};
+	
 	var parseColor = /^(\w{2})(\w{2})(\w{2})(\w{2})$/;
 	
 	/*
@@ -61,7 +63,7 @@ GlobWeb.AnotherKMLParser = (function()
 			coordinates.push( [ parseFloat(coords[i]), parseFloat(coords[i+1]) ] );
 		}
 		return coordinates;
-	}
+	};
 	
 	/*
 	 * Parse KML geometry, return a GeoJSON geometry
@@ -123,7 +125,7 @@ GlobWeb.AnotherKMLParser = (function()
 		}
 	
 		return null;
-	}
+	};
 	
 	/*
 	 * Parse placemark
@@ -177,18 +179,25 @@ GlobWeb.AnotherKMLParser = (function()
 		{
 			// Manage the fact that labels are always active with KML
 			var style = feature.properties.style;
+			style["pointMaxSize"]= 150; 
 			if ( style && style.textColor[3] > 0.0 && feature.geometry.type == "Point" )
 			{
 				if ( shareStyle )
 				{
 					style = feature.properties.style = new GlobWeb.FeatureStyle(style);
 				}
-				style.label = feature.properties.name;
+
+				if(!style.iconUrl){
+					style.label = feature.properties.name;
+				}
+				else{
+					style.fillColor=[1,1,1,1];
+				}
 			}
 			
 			featureCollection.features.push( feature );
 		}
-	}
+	};
 	
 	/*
 	 * Parse line style
@@ -209,7 +218,7 @@ GlobWeb.AnotherKMLParser = (function()
 			}
 			child = child.nextElementSibling;
 		}
-	}
+	};
 	
 	/*
 	 * Parse poly style
@@ -228,7 +237,7 @@ GlobWeb.AnotherKMLParser = (function()
 			}
 			child = child.nextElementSibling;
 		}
-	}
+	};
 	
 	/*
 	 * Parse icon style
@@ -240,19 +249,13 @@ GlobWeb.AnotherKMLParser = (function()
 		{
 			switch ( child.nodeName )
 			{
-			case "color":
-				//style.strokeColor = fromStringToColor( child.childNodes[0].nodeValue );
-				break;
 			case "Icon":
-				if ( child.firstElementChild )
-					style.iconUrl = child.firstElementChild.childNodes[0].nodeValue;
-				else
-					style.iconUrl = null;
+				style.iconUrl = parseProperty(child, "*", "href");
 				break;
 			}
 			child = child.nextElementSibling;
 		}
-	}
+	};
 
 	/*
 	 * Parse label style
@@ -272,16 +275,10 @@ GlobWeb.AnotherKMLParser = (function()
 					style.textColor = labelColor;
 				}
 				break;
-			/*case "Icon":
-				if ( child.firstElementChild )
-					style.iconUrl = child.firstElementChild.childNodes[0].nodeValue;
-				else
-					style.iconUrl = null;
-				break;*/
 			}
 			child = child.nextElementSibling;
 		}
-	}
+	};
 	
 	/*
 	 * Parse style
@@ -323,7 +320,7 @@ GlobWeb.AnotherKMLParser = (function()
 		}
 			
 		return style;
-	}
+	};
 
 	/**
      * Method: parseStyles
@@ -430,14 +427,51 @@ GlobWeb.AnotherKMLParser = (function()
                         styles[styleUrl];
                 }
 
-                // TODO: implement the "select" part
-                //if (styleUrl && key == "highlight") {
-                //}
-
             }
         }
 
     };
+    
+    /**
+     * Method: parseLinks
+     * Finds URLs of linked KML documents and fetches them
+     * 
+     * Parameters: 
+     * nodes   - {Array} of {DOMElement} data to read/parse.
+     * options - {Object} Hash of options
+     * 
+     */
+    var parseLinks= function(nodes) {
+        // Fetch external links <NetworkLink> and <Link>
+
+        for(var i=0, len=nodes.length; i<len; i++) {
+            var href = parseProperty(nodes[i], "*", "href");
+            if(href && !fetched[href]) {
+                fetched[href] = true; // prevent reloading the same urls
+                var data = fetchLink(href);
+                if (data) {
+            		featureCollection.features = featureCollection.features.concat(parse(data).features);
+                }
+            } 
+        }
+
+    };
+    
+    /**
+     * Method: fetchLink
+     * Fetches a URL and returns the result
+     * 
+     * Parameters: 
+     * href  - {String} url to be fetched
+     * 
+     */
+    var fetchLink= function(href) {
+    
+        //TODO: perform a GET request to href
+    	return null;
+    	
+    };
+    
     
 	/*
 	 * Parse a KML document
@@ -446,7 +480,7 @@ GlobWeb.AnotherKMLParser = (function()
 	{
 		// Loop throught the following node types in this order and
         // process the nodes found 
-        var types = ["Style", "StyleMap", "Placemark"];
+        var types = ["Link", "NetworkLink", "Style", "StyleMap", "Placemark"];
         for(var i=0, len=types.length; i<len; ++i) {
             var type = types[i];
 
@@ -459,6 +493,12 @@ GlobWeb.AnotherKMLParser = (function()
             }
 
             switch (type.toLowerCase()) {
+
+	            // Fetch external links 
+	            case "link":
+	            case "networklink":
+	                parseLinks(nodes);
+	                break;
 
                 // parse style information
                 case "style":
