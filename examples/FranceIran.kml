@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-<Style id="s_ylw-pushpin">
+<Style id="aoi2">
 		<IconStyle>
 			<scale>1.1</scale>
 			<Icon>
@@ -41,7 +41,7 @@
 	</Style>
 <Placemark>
 		<name>Iran</name>
-		<styleUrl>#s_ylw-pushpin</styleUrl>
+		<styleUrl>#aoi2</styleUrl>
 		<Polygon>
 			<tessellate>1</tessellate>
 			<outerBoundaryIs>

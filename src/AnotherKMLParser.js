@@ -179,9 +179,10 @@ GlobWeb.AnotherKMLParser = (function()
 		{
 			// Manage the fact that labels are always active with KML
 			var style = feature.properties.style;
-			style["pointMaxSize"]= 150; 
 			if ( style && style.textColor[3] > 0.0 && feature.geometry.type == "Point" )
 			{
+				style["pointMaxSize"]= 150; 
+				
 				if ( shareStyle )
 				{
 					style = feature.properties.style = new GlobWeb.FeatureStyle(style);
@@ -466,9 +467,11 @@ GlobWeb.AnotherKMLParser = (function()
      * 
      */
     var fetchLink= function(href) {
-    
-        //TODO: perform a GET request to href
-    	return null;
+    	//TODO: handle CORS
+    	var xhr = new XMLHttpRequest();
+    	xhr.open("GET", href, false);
+    	xhr.send();
+    	return xhr.responseXML;
     	
     };
     
