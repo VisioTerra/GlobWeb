@@ -340,7 +340,6 @@ GlobWeb.PointRenderer.prototype.render = function()
 		gl.activeTexture(gl.TEXTURE0);
 		gl.bindTexture(gl.TEXTURE_2D, bucket.texture);
 
-
 		if(bucket.style.height && bucket.style.width){
 			var h = bucket.style.height;
 			var w = bucket.style.width;
@@ -349,12 +348,6 @@ GlobWeb.PointRenderer.prototype.render = function()
 			var h = (bucket.textureHeight > 30) ? 30 : bucket.textureHeight;
 			var w = h * bucket.textureWidth / bucket.textureHeight;
 		}
-		
-		// 2.0 * because normalized device coordinates goes from -1 to 1
-		var scale = [2.0 * w / renderContext.canvas.width,
-					 2.0 * h / renderContext.canvas.height];
-		gl.uniform2fv(this.program.uniforms["poiScale"], scale);
-		gl.uniform2fv(this.program.uniforms["tst"], [ 0.5 / (w), 0.5 / (h)  ]);
 
 		for (var i = 0; i < bucket.points.length; ++i)
 		{
@@ -365,8 +358,19 @@ GlobWeb.PointRenderer.prototype.render = function()
 			scale *= this.tileConfig.cullSign;
 			var scaleInKm = (scale / GlobWeb.CoordinateSystem.heightScale) * 0.001;
 
-			if ( scaleInKm > bucket.style.pointMaxSize )
-				continue;
+			if ( scaleInKm > bucket.style.pointMaxSize ){
+				var dist = Math.sqrt((Math.pow(renderContext.eyePosition[0], 2) + Math.pow(renderContext.eyePosition[1], 2) + Math.pow(renderContext.eyePosition[2], 2)));
+				w /= dist;
+				h /= dist;
+				scale /= dist;
+				if ( h < 30 && dist >2 ) continue;
+			}
+			
+			// 2.0 * because normalized device coordinates goes from -1 to 1
+			var scale2 = [2.0 * w / renderContext.canvas.width,
+						 2.0 * h / renderContext.canvas.height];
+			gl.uniform2fv(this.program.uniforms["poiScale"], scale2);
+			gl.uniform2fv(this.program.uniforms["tst"], [ 0.5 / (w), 0.5 / (h)  ]);
 				
 			if ( vec3.dot(poiVec, camZ) > 0 
 				&& renderContext.worldFrustum.containsSphere(worldPoi,scale) >= 0 )
