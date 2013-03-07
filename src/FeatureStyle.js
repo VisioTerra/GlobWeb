@@ -289,7 +289,7 @@ GlobWeb.FeatureStyle.fromColorToString = function(color)
  */
 GlobWeb.FeatureStyle.prototype.isEqualForPoly = function(style)
 {
-	return this.fill == style.fill;
+	return (this.fill == style.fill) && (this.fillColor == style.fillColor);
 }
 
 /**************************************************************************************************************/

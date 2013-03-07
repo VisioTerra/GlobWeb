@@ -93,7 +93,7 @@ GlobWeb.AnotherKMLParser = (function()
 			case "LineString":
 			{
 				var coordNode = node.getElementsByTagName("coordinates");
-				if ( coordNode.length == 1 )
+				if ( coordNode.length > 0)
 				{
 					return { type: "LineString",
 							coordinates: parseCoordinates( coordNode[0].textContent ) };
@@ -104,7 +104,7 @@ GlobWeb.AnotherKMLParser = (function()
 			{
 				// TODO : manage holes
 				var coordNode = node.getElementsByTagName("coordinates");
-				if ( coordNode.length == 1 )
+				if ( coordNode.length > 0 )
 				{
 					return { type: "Polygon",
 							coordinates: [ parseCoordinates( coordNode[0].textContent ) ] };
@@ -114,7 +114,7 @@ GlobWeb.AnotherKMLParser = (function()
 			case "Point":
 			{
 				var coordNode = node.getElementsByTagName("coordinates");
-				if ( coordNode.length == 1 )
+				if ( coordNode.length > 0 )
 				{
 					var coord = coordNode[0].textContent.split(",");
 					return { type: "Point",
@@ -553,7 +553,6 @@ GlobWeb.AnotherKMLParser = (function()
                     break;
             }
         }
-
 		return featureCollection;
 	};
 	
