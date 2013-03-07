@@ -353,6 +353,5 @@ GlobWeb.KMLParser = (function()
 		
 		return featureCollection;
 	}
-	
 	return { parse: parse };
 })();

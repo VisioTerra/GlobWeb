@@ -181,8 +181,6 @@ GlobWeb.AnotherKMLParser = (function()
 			var style = feature.properties.style;
 			if ( style && style.textColor[3] > 0.0 && feature.geometry.type == "Point" )
 			{
-				style["pointMaxSize"]= 150; 
-				
 				if ( shareStyle )
 				{
 					style = feature.properties.style = new GlobWeb.FeatureStyle(style);
@@ -252,6 +250,40 @@ GlobWeb.AnotherKMLParser = (function()
 			{
 			case "Icon":
 				style.iconUrl = parseProperty(child, "*", "href");
+
+				if(!style.iconUrl) break;
+				
+				var scale = parseFloat(parseProperty(node, "*", "scale") || 1);
+				var w = parseProperty(child, "*", "w");
+                var h = parseProperty(child, "*", "h");
+
+                // Settings for Google specific icons that are 64x64
+                // We set the width and height to 64 and halve the
+                // scale to prevent icons from being too big
+                var google = "http://maps.google.com/mapfiles/kml";
+                if (style.iconUrl.substring(0, google.length) === google && !w && !h) {
+                    w = 64;
+                    h = 64;
+                    scale = scale / 2;
+                }
+                    
+                // if only dimension is defined, make sure the
+                // other one has the same value
+                w = w || h;
+                h = h || w;
+
+                if (w || h) {
+                	style.width = parseInt(w) * scale;
+                	style.height = parseInt(h) * scale;
+                }
+                else{
+                	// set default width and height of icon
+    				style.width = 32 * scale;
+    				style.height = 32 * scale;
+                }
+                
+                style.pointMaxSize = style.height;
+
 				break;
 			}
 			child = child.nextElementSibling;
@@ -287,37 +319,41 @@ GlobWeb.AnotherKMLParser = (function()
 	var parseStyle = function(node)
 	{
 		var style = null;
-		var id = '#' + node.getAttribute("id");
-
-		if ( styles.hasOwnProperty(id) ) 
-		{
-			style = styles[id];
-		}
-		else{
-			style = new GlobWeb.FeatureStyle();
-			styles[id] = style;
-			
-			// Iterate through child to manage all different style element
-			var child = node.firstElementChild;
-			while ( child )
+		
+		var id = node.getAttribute("id");
+		if(id){
+			id = "#" + id;
+			if ( styles.hasOwnProperty(id) ) 
 			{
-				switch ( child.nodeName )
-				{
-				case "LineStyle":
-					parseLineStyle(child,style);
-					break;
-				case "IconStyle":
-					parseIconStyle(child,style);
-					break;
-				case "LabelStyle":
-					parseLabelStyle(child,style);
-					break;
-				case "PolyStyle":
-					parsePolyStyle(child,style);
-					break;
-				}
-				child = child.nextElementSibling;
+				style = styles[id];
+				return style;
 			}
+		}
+		
+		style = new GlobWeb.FeatureStyle();
+		if(id) styles[id] = style;
+		
+		// Iterate through child to manage all different style element
+		var child = node.firstElementChild;
+		while ( child )
+		{
+			switch ( child.nodeName )
+			{
+			case "LineStyle":
+				parseLineStyle(child,style);
+				break;
+			case "IconStyle":
+				parseIconStyle(child,style);
+				break;
+			case "LabelStyle":
+				parseLabelStyle(child,style);
+				break;
+			case "PolyStyle":
+				parsePolyStyle(child,style);
+				break;
+			}
+			child = child.nextElementSibling;
+			
 		}
 			
 		return style;
@@ -334,7 +370,9 @@ GlobWeb.AnotherKMLParser = (function()
      */
     var parseStyles = function(nodes) {
         for(var i=0, len=nodes.length; i<len; i++) {
-            parseStyle(nodes[i]);
+            if(nodes[i].getAttribute("id")){
+            	parseStyle(nodes[i]);
+            }
         }
     };
     
@@ -488,7 +526,6 @@ GlobWeb.AnotherKMLParser = (function()
             var type = types[i];
 
             var nodes = data.getElementsByTagName(type);
-            //var nodes = this.getElementsByTagNameNS(data, "*", type);
 
             // skip to next type if no nodes are found
             if(nodes.length == 0) { 
@@ -516,6 +553,7 @@ GlobWeb.AnotherKMLParser = (function()
                     break;
             }
         }
+
 		return featureCollection;
 	};
 	

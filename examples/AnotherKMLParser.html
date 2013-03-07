@@ -21,8 +21,8 @@
 					layers: "BlueMarble,esat" } );
 		globe.setBaseImagery( bmlayer );
 		
-		var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.telespazio.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
-		globe.setBaseElevation( elevationLayer );
+		/*var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.telespazio.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
+		globe.setBaseElevation( elevationLayer );*/
 		
 		var vectorLayer = new GlobWeb.VectorLayer();
 
@@ -37,17 +37,12 @@
 		};
 		//xhr.open("GET", "world-borders/doc.kml");
 		//xhr.open("GET", "doc.kml");
-		xhr.open("GET", "link.kml");
+		//xhr.open("GET", "Population, 2005.kml");
+		xhr.open("GET", "kmlfactbook_Fertility.kml");
+		//xhr.open("GET", "FranceIran.kml");
 		//xhr.open("GET", "testUS.kml");
 		xhr.send();
 		
-		
-		var vis = true;
- 		document.onkeypress = function(event)
-		{
-			vis = !vis;
-			vectorLayer.visible( vis );
-		}
    }
 
 

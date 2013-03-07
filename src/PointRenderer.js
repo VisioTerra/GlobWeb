@@ -340,20 +340,31 @@ GlobWeb.PointRenderer.prototype.render = function()
 		gl.activeTexture(gl.TEXTURE0);
 		gl.bindTexture(gl.TEXTURE_2D, bucket.texture);
 
+
+		if(bucket.style.height && bucket.style.width){
+			var h = bucket.style.height;
+			var w = bucket.style.width;
+		}
+		else{
+			var h = (bucket.textureHeight > 30) ? 30 : bucket.textureHeight;
+			var w = h * bucket.textureWidth / bucket.textureHeight;
+		}
+		
 		// 2.0 * because normalized device coordinates goes from -1 to 1
-		var scale = [2.0 * bucket.textureWidth / renderContext.canvas.width,
-					 2.0 * bucket.textureHeight / renderContext.canvas.height];
+		var scale = [2.0 * w / renderContext.canvas.width,
+					 2.0 * h / renderContext.canvas.height];
 		gl.uniform2fv(this.program.uniforms["poiScale"], scale);
-		gl.uniform2fv(this.program.uniforms["tst"], [ 0.5 / (bucket.textureWidth), 0.5 / (bucket.textureHeight)  ]);
+		gl.uniform2fv(this.program.uniforms["tst"], [ 0.5 / (w), 0.5 / (h)  ]);
 
 		for (var i = 0; i < bucket.points.length; ++i)
 		{
 			// Poi culling
 			var worldPoi = bucket.points[i].pos3d;
 			var poiVec = bucket.points[i].vertical;
-			var scale = bucket.textureHeight * ( pixelSizeVector[0] * worldPoi[0] + pixelSizeVector[1] * worldPoi[1] + pixelSizeVector[2] * worldPoi[2] + pixelSizeVector[3] );
+			var scale = h * ( pixelSizeVector[0] * worldPoi[0] + pixelSizeVector[1] * worldPoi[1] + pixelSizeVector[2] * worldPoi[2] + pixelSizeVector[3] );
 			scale *= this.tileConfig.cullSign;
 			var scaleInKm = (scale / GlobWeb.CoordinateSystem.heightScale) * 0.001;
+
 			if ( scaleInKm > bucket.style.pointMaxSize )
 				continue;
 				

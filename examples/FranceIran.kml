@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-<Style id="aoi2">
+	<Style id="aoi2">
 		<IconStyle>
 			<scale>1.1</scale>
 			<Icon>
@@ -39,7 +39,7 @@
 			<fill>0</fill>
 		</PolyStyle>
 	</Style>
-<Placemark>
+	<Placemark>
 		<name>Iran</name>
 		<styleUrl>#aoi2</styleUrl>
 		<Polygon>
