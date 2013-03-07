@@ -402,9 +402,9 @@ GlobWeb.ConvexPolygonRenderer.prototype.getOrCreateBucket = function(layer,style
 	{
 		var bucket = this.buckets[i];
 		if ( bucket.layer == layer 
-			&& bucket.style.strokeColor[0] == style.strokeColor[0]
-			&& bucket.style.strokeColor[1] == style.strokeColor[1]
-			&& bucket.style.strokeColor[2] == style.strokeColor[2]
+			&& bucket.style.fillColor[0] == style.fillColor[0]
+			&& bucket.style.fillColor[1] == style.fillColor[1]
+			&& bucket.style.fillColor[2] == style.fillColor[2]
 			&& bucket.style.fill == style.fill
 			&& bucket.style.fillTexture == style.fillTexture
 			&& bucket.style.fillTextureUrl == style.fillTextureUrl
