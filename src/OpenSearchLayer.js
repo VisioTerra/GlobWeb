@@ -28,7 +28,6 @@
 			<li>serviceUrl : Url of OpenSearch description XML file(necessary option)</li>
 			<li>minOrder : Starting order for OpenSearch requests</li>
 			<li>displayProperties : Properties which will be shown in priority</li>
-			<li>proxyUrl : Url of proxy for external pages</li>
 		</ul>
 */
 GlobWeb.OpenSearchLayer = function(options){
@@ -37,7 +36,6 @@ GlobWeb.OpenSearchLayer = function(options){
 	this.serviceUrl = options.serviceUrl;
 	this.minOrder = options.minOrder || 5;
 	this.requestProperties = "";
-	this.proxyUrl = options.proxyUrl || "";
 
 	// Set style
 	if ( options && options['style'] )
@@ -209,30 +207,33 @@ GlobWeb.OpenSearchLayer.prototype.launchRequest = function(tile, url)
 /**
  * 	Set new request properties
  */
-GlobWeb.OpenSearchLayer.prototype.setReqestProperties = function(properties)
+GlobWeb.OpenSearchLayer.prototype.setRequestProperties = function(properties)
 {
+	// clean renderers
+	for ( var x in this.featuresSet )
+	{
+		var featureData = this.featuresSet[x];
+		for ( var i=0; i<featureData.tiles.length; i++ )
+		{
+			var tile = featureData.tiles[i];
+			var feature = this.features[featureData.index];
+			this.removeFeatureFromRenderer( feature, tile );
+		}
+	}
+
 	// Clean old results
 	var self = this;
 	this.globe.tileManager.visitTiles( function(tile) {
 		if( tile.extension[self.extId] )
 		{
 			tile.extension[self.extId].dispose();
-			delete tile.extension[self.extId];
+			tile.extension[self.extId].featureIds = []; // exclusive parameter to remove from layer
+			tile.extension[self.extId].state = GlobWeb.OpenSearchLayer.TileState.NOT_LOADED;
+			tile.extension[self.extId].complete = false;
 		}
 	});
-
-	// TODO clean renderers
-	// Never tested yet...
-	// for ( var x in this.featuresSet )
-	// {
-	// 	var featureData = this.featuresSet[x];
-	// 	for ( var i=0; i<featureData.tiles.length; i++ )
-	// 	{
-	// 		var tile = featureData.tiles[i];
-	// 		var feature = this.features[featureData.index];
-	// 		this.removeFeatureFromRenderer( feature, tile );
-	// 	}
-	// }
+	this.featuresSet = {};
+	this.features = [];
 
 	// Set request properties
 	this.requestProperties = "";
@@ -240,7 +241,7 @@ GlobWeb.OpenSearchLayer.prototype.setReqestProperties = function(properties)
 	{
 		if ( this.requestProperties != "" )
 			this.requestProperties += '&'
-		this.requestProperties += key+'="'+properties[key]+'"';
+		this.requestProperties += key+'='+properties[key];
 	}
 	
 }
@@ -336,11 +337,11 @@ GlobWeb.OpenSearchLayer.prototype.removeFeatureFromRenderer = function( feature,
 {
 	if ( feature.geometry['type'] == "Point" )
 	{
-		this.pointRenderer.removeGeometryFromTile( this.pointBucket, geometry, tile );
+		this.pointRenderer.removeGeometryFromTile( feature.geometry, tile );
 	} 
 	else if ( feature.geometry['type'] == "Polygon" )
 	{
-		this.polygonRenderer.removeGeometryFromTile( this.polygonBucket, geometry, tile );
+		this.polygonRenderer.removeGeometryFromTile( feature.geometry, tile );
 	}
 }
 
@@ -530,10 +531,11 @@ GlobWeb.OpenSearchLayer.prototype.render = function( tiles )
 					if ( tile.parent && tile.parent.extension[this.extId].state == GlobWeb.OpenSearchLayer.TileState.LOADING )
 						continue;
 
-				var url = this.buildUrl(tile);
-				if ( url )
-				{
-					this.launchRequest(tile, url);
+					var url = this.buildUrl(tile);
+					if ( url )
+					{
+						this.launchRequest(tile, url);
+					}
 				}
 			}
 		}
@@ -547,6 +549,28 @@ GlobWeb.OpenSearchLayer.prototype.render = function( tiles )
  */
 GlobWeb.OpenSearchLayer.prototype.updateFeatures = function( features )
 {
+	for ( var i=0; i<features.length; i++ )
+	{
+		var currentFeature = features[i];
+		
+		switch ( currentFeature.geometry.type )
+		{
+			case "Point":
+				if ( currentFeature.geometry.coordinates[0] > 180 )
+					currentFeature.geometry.coordinates[0] -= 360;
+				break;
+			case "Polygon":
+				var ring = currentFeature.geometry.coordinates[0];
+				for ( var j = 0; j < ring.length; j++ )
+				{
+					if ( ring[j][0] > 180 )
+						ring[j][0] -= 360;
+				}
+				break;
+			default:
+				break;
+		}
+	}
 }
 
 /*************************************************************************************************************/
