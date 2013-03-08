@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+    <name>500 points example</name>    <styleUrl>#check-hide-children</styleUrl>
+    <Style id="check-hide-children">
+		<ListStyle>
+			<listItemType>checkHideChildren</listItemType>
+		</ListStyle>
+    </Style>
+<Style id="sn_1">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/1.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_1">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/1.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style1">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_1</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_1</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_2">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/2.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_2">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/2.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style2">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_2</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_2</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_3">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/3.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_3">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/3.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style3">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_3</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_3</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_4">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/4.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_4">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/4.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style4">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_4</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_4</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_5">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/5.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_5">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/5.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style5">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_5</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_5</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_6">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/6.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_6">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/6.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style6">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_6</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_6</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_7">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/7.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_7">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/7.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style7">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_7</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_7</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_8">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/8.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_8">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/8.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style8">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_8</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_8</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_9">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/9.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_9">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/paddle/9.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style9">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_9</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_9</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_10">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_10">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style10">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_10</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_10</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_11">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_11">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style11">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_11</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_11</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_12">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/wht-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_12">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/wht-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style12">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_12</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_12</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_13">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_13">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style13">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_13</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_13</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_14">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/shapes/hospitals.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_14">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/shapes/hospitals.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style14">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_14</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_14</styleUrl>
+	</Pair>
+    </StyleMap>
+<Style id="sn_15">
+	<IconStyle>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0</scale>
+	</LabelStyle>
+    </Style>
+    <Style id="sh_15">
+	<IconStyle>
+		<scale>1.1</scale>
+		<Icon>
+			<href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href>
+		</Icon>
+	</IconStyle>
+	<LabelStyle>
+		<scale>0.9</scale>
+	</LabelStyle>
+    </Style>
+    <StyleMap id="style15">
+	<Pair>
+	   <key>normal</key>
+	   <styleUrl>#sn_15</styleUrl>
+	</Pair>
+	<Pair>
+	   <key>highlight</key>
+	   <styleUrl>#sh_15</styleUrl>
+	</Pair>
+    </StyleMap>
+<Placemark><name>P1</name><styleUrl>#style7</styleUrl><Point><coordinates>87.02,-87.72</coordinates></Point></Placemark>
+<Placemark><name>P2</name><styleUrl>#style5</styleUrl><Point><coordinates>50.57,-52.5</coordinates></Point></Placemark>
+<Placemark><name>P3</name><styleUrl>#style2</styleUrl><Point><coordinates>-22.91,-62.49</coordinates></Point></Placemark>
+<Placemark><name>P4</name><styleUrl>#style12</styleUrl><Point><coordinates>-74.4,-78.26</coordinates></Point></Placemark>
+<Placemark><name>P5</name><styleUrl>#style8</styleUrl><Point><coordinates>57.57,29.39</coordinates></Point></Placemark>
+<Placemark><name>P6</name><styleUrl>#style8</styleUrl><Point><coordinates>-3.45,-44.49</coordinates></Point></Placemark>
+<Placemark><name>P7</name><styleUrl>#style15</styleUrl><Point><coordinates>115.49,72.35</coordinates></Point></Placemark>
+<Placemark><name>P8</name><styleUrl>#style5</styleUrl><Point><coordinates>20.9,-69.28</coordinates></Point></Placemark>
+<Placemark><name>P9</name><styleUrl>#style13</styleUrl><Point><coordinates>-20.02,-20.64</coordinates></Point></Placemark>
+<Placemark><name>P10</name><styleUrl>#style5</styleUrl><Point><coordinates>-22.63,-8.13</coordinates></Point></Placemark>
+<Placemark><name>P11</name><styleUrl>#style12</styleUrl><Point><coordinates>62.38,-85.5</coordinates></Point></Placemark>
+<Placemark><name>P12</name><styleUrl>#style6</styleUrl><Point><coordinates>-140.46,69.02</coordinates></Point></Placemark>
+<Placemark><name>P13</name><styleUrl>#style13</styleUrl><Point><coordinates>55.42,-86.54</coordinates></Point></Placemark>
+<Placemark><name>P14</name><styleUrl>#style4</styleUrl><Point><coordinates>-129.54,25.22</coordinates></Point></Placemark>
+<Placemark><name>P15</name><styleUrl>#style13</styleUrl><Point><coordinates>-58.92,47.8</coordinates></Point></Placemark>
+<Placemark><name>P16</name><styleUrl>#style3</styleUrl><Point><coordinates>-80.02,78.02</coordinates></Point></Placemark>
+<Placemark><name>P17</name><styleUrl>#style11</styleUrl><Point><coordinates>-164.95,85.23</coordinates></Point></Placemark>
+<Placemark><name>P18</name><styleUrl>#style11</styleUrl><Point><coordinates>-155.1,54.85</coordinates></Point></Placemark>
+<Placemark><name>P19</name><styleUrl>#style4</styleUrl><Point><coordinates>-112.95,24.93</coordinates></Point></Placemark>
+<Placemark><name>P20</name><styleUrl>#style4</styleUrl><Point><coordinates>-32.98,20.01</coordinates></Point></Placemark>
+<Placemark><name>P21</name><styleUrl>#style9</styleUrl><Point><coordinates>2.67,16.7</coordinates></Point></Placemark>
+<Placemark><name>P22</name><styleUrl>#style14</styleUrl><Point><coordinates>-15.92,41.54</coordinates></Point></Placemark>
+<Placemark><name>P23</name><styleUrl>#style15</styleUrl><Point><coordinates>-2.56,73.62</coordinates></Point></Placemark>
+<Placemark><name>P24</name><styleUrl>#style15</styleUrl><Point><coordinates>41.57,41.51</coordinates></Point></Placemark>
+<Placemark><name>P25</name><styleUrl>#style13</styleUrl><Point><coordinates>-132.04,85.26</coordinates></Point></Placemark>
+<Placemark><name>P26</name><styleUrl>#style6</styleUrl><Point><coordinates>-10.21,76.46</coordinates></Point></Placemark>
+<Placemark><name>P27</name><styleUrl>#style6</styleUrl><Point><coordinates>67.5,-46.69</coordinates></Point></Placemark>
+<Placemark><name>P28</name><styleUrl>#style9</styleUrl><Point><coordinates>-28.02,87.73</coordinates></Point></Placemark>
+<Placemark><name>P29</name><styleUrl>#style12</styleUrl><Point><coordinates>-43.95,-85.55</coordinates></Point></Placemark>
+<Placemark><name>P30</name><styleUrl>#style7</styleUrl><Point><coordinates>-141.24,-43.49</coordinates></Point></Placemark>
+<Placemark><name>P31</name><styleUrl>#style6</styleUrl><Point><coordinates>-13.6,43.38</coordinates></Point></Placemark>
+<Placemark><name>P32</name><styleUrl>#style1</styleUrl><Point><coordinates>13.86,24</coordinates></Point></Placemark>
+<Placemark><name>P33</name><styleUrl>#style4</styleUrl><Point><coordinates>24.08,13.53</coordinates></Point></Placemark>
+<Placemark><name>P34</name><styleUrl>#style14</styleUrl><Point><coordinates>131.16,-41.43</coordinates></Point></Placemark>
+<Placemark><name>P35</name><styleUrl>#style11</styleUrl><Point><coordinates>-11.63,-53.46</coordinates></Point></Placemark>
+<Placemark><name>P36</name><styleUrl>#style2</styleUrl><Point><coordinates>161.8,73.3</coordinates></Point></Placemark>
+<Placemark><name>P37</name><styleUrl>#style10</styleUrl><Point><coordinates>-177.7,42.33</coordinates></Point></Placemark>
+<Placemark><name>P38</name><styleUrl>#style2</styleUrl><Point><coordinates>-121.89,-45.81</coordinates></Point></Placemark>
+<Placemark><name>P39</name><styleUrl>#style6</styleUrl><Point><coordinates>147.75,-53.67</coordinates></Point></Placemark>
+<Placemark><name>P40</name><styleUrl>#style5</styleUrl><Point><coordinates>-169.45,76.82</coordinates></Point></Placemark>
+<Placemark><name>P41</name><styleUrl>#style15</styleUrl><Point><coordinates>-128.93,-57.09</coordinates></Point></Placemark>
+<Placemark><name>P42</name><styleUrl>#style10</styleUrl><Point><coordinates>13.86,77.89</coordinates></Point></Placemark>
+<Placemark><name>P43</name><styleUrl>#style14</styleUrl><Point><coordinates>112.15,35.19</coordinates></Point></Placemark>
+<Placemark><name>P44</name><styleUrl>#style10</styleUrl><Point><coordinates>-36.55,-35.73</coordinates></Point></Placemark>
+<Placemark><name>P45</name><styleUrl>#style2</styleUrl><Point><coordinates>-26.75,20.7</coordinates></Point></Placemark>
+<Placemark><name>P46</name><styleUrl>#style5</styleUrl><Point><coordinates>-155.64,-79.25</coordinates></Point></Placemark>
+<Placemark><name>P47</name><styleUrl>#style5</styleUrl><Point><coordinates>139.58,28.13</coordinates></Point></Placemark>
+<Placemark><name>P48</name><styleUrl>#style12</styleUrl><Point><coordinates>-63.31,66.11</coordinates></Point></Placemark>
+<Placemark><name>P49</name><styleUrl>#style6</styleUrl><Point><coordinates>144.27,63.33</coordinates></Point></Placemark>
+<Placemark><name>P50</name><styleUrl>#style1</styleUrl><Point><coordinates>61.35,-85.09</coordinates></Point></Placemark>
+<Placemark><name>P51</name><styleUrl>#style7</styleUrl><Point><coordinates>-145.97,-87.75</coordinates></Point></Placemark>
+<Placemark><name>P52</name><styleUrl>#style2</styleUrl><Point><coordinates>-82.55,-36.31</coordinates></Point></Placemark>
+<Placemark><name>P53</name><styleUrl>#style15</styleUrl><Point><coordinates>123.88,-10.57</coordinates></Point></Placemark>
+<Placemark><name>P54</name><styleUrl>#style10</styleUrl><Point><coordinates>-151.61,87.65</coordinates></Point></Placemark>
+<Placemark><name>P55</name><styleUrl>#style1</styleUrl><Point><coordinates>19.04,-47.28</coordinates></Point></Placemark>
+<Placemark><name>P56</name><styleUrl>#style10</styleUrl><Point><coordinates>49.52,-55.31</coordinates></Point></Placemark>
+<Placemark><name>P57</name><styleUrl>#style5</styleUrl><Point><coordinates>-89.08,14.67</coordinates></Point></Placemark>
+<Placemark><name>P58</name><styleUrl>#style2</styleUrl><Point><coordinates>-84.3,16.64</coordinates></Point></Placemark>
+<Placemark><name>P59</name><styleUrl>#style1</styleUrl><Point><coordinates>-33.1,-15.64</coordinates></Point></Placemark>
+<Placemark><name>P60</name><styleUrl>#style13</styleUrl><Point><coordinates>-109.9,38.87</coordinates></Point></Placemark>
+<Placemark><name>P61</name><styleUrl>#style1</styleUrl><Point><coordinates>-164.91,15.54</coordinates></Point></Placemark>
+<Placemark><name>P62</name><styleUrl>#style3</styleUrl><Point><coordinates>-113.86,13.44</coordinates></Point></Placemark>
+<Placemark><name>P63</name><styleUrl>#style9</styleUrl><Point><coordinates>98.27,20.7</coordinates></Point></Placemark>
+<Placemark><name>P64</name><styleUrl>#style14</styleUrl><Point><coordinates>-25.56,-32.28</coordinates></Point></Placemark>
+<Placemark><name>P65</name><styleUrl>#style10</styleUrl><Point><coordinates>121.83,-22.57</coordinates></Point></Placemark>
+<Placemark><name>P66</name><styleUrl>#style5</styleUrl><Point><coordinates>-42.04,53.11</coordinates></Point></Placemark>
+<Placemark><name>P67</name><styleUrl>#style4</styleUrl><Point><coordinates>-94.18,-37.64</coordinates></Point></Placemark>
+<Placemark><name>P68</name><styleUrl>#style15</styleUrl><Point><coordinates>-128.28,-65.03</coordinates></Point></Placemark>
+<Placemark><name>P69</name><styleUrl>#style4</styleUrl><Point><coordinates>-47.07,54.33</coordinates></Point></Placemark>
+<Placemark><name>P70</name><styleUrl>#style3</styleUrl><Point><coordinates>-14.55,76.83</coordinates></Point></Placemark>
+<Placemark><name>P71</name><styleUrl>#style10</styleUrl><Point><coordinates>-170.98,35.63</coordinates></Point></Placemark>
+<Placemark><name>P72</name><styleUrl>#style12</styleUrl><Point><coordinates>64.39,34.37</coordinates></Point></Placemark>
+<Placemark><name>P73</name><styleUrl>#style10</styleUrl><Point><coordinates>-132.92,-21.03</coordinates></Point></Placemark>
+<Placemark><name>P74</name><styleUrl>#style11</styleUrl><Point><coordinates>39.22,4.01</coordinates></Point></Placemark>
+<Placemark><name>P75</name><styleUrl>#style14</styleUrl><Point><coordinates>-156.89,62.84</coordinates></Point></Placemark>
+<Placemark><name>P76</name><styleUrl>#style6</styleUrl><Point><coordinates>-172.83,55.22</coordinates></Point></Placemark>
+<Placemark><name>P77</name><styleUrl>#style9</styleUrl><Point><coordinates>-147.19,41.1</coordinates></Point></Placemark>
+<Placemark><name>P78</name><styleUrl>#style13</styleUrl><Point><coordinates>120.41,-74.17</coordinates></Point></Placemark>
+<Placemark><name>P79</name><styleUrl>#style5</styleUrl><Point><coordinates>23.54,-51.35</coordinates></Point></Placemark>
+<Placemark><name>P80</name><styleUrl>#style2</styleUrl><Point><coordinates>29.84,-8.03</coordinates></Point></Placemark>
+<Placemark><name>P81</name><styleUrl>#style1</styleUrl><Point><coordinates>-92.33,-84.03</coordinates></Point></Placemark>
+<Placemark><name>P82</name><styleUrl>#style3</styleUrl><Point><coordinates>-48.93,-34.66</coordinates></Point></Placemark>
+<Placemark><name>P83</name><styleUrl>#style14</styleUrl><Point><coordinates>82.43,-49.78</coordinates></Point></Placemark>
+<Placemark><name>P84</name><styleUrl>#style2</styleUrl><Point><coordinates>-44.98,-33.25</coordinates></Point></Placemark>
+<Placemark><name>P85</name><styleUrl>#style11</styleUrl><Point><coordinates>-40.03,-35.33</coordinates></Point></Placemark>
+<Placemark><name>P86</name><styleUrl>#style2</styleUrl><Point><coordinates>43.75,25.95</coordinates></Point></Placemark>
+<Placemark><name>P87</name><styleUrl>#style1</styleUrl><Point><coordinates>9.92,-6.53</coordinates></Point></Placemark>
+<Placemark><name>P88</name><styleUrl>#style13</styleUrl><Point><coordinates>17.52,44.28</coordinates></Point></Placemark>
+<Placemark><name>P89</name><styleUrl>#style7</styleUrl><Point><coordinates>-64.45,44.83</coordinates></Point></Placemark>
+<Placemark><name>P90</name><styleUrl>#style14</styleUrl><Point><coordinates>-176.29,73.64</coordinates></Point></Placemark>
+<Placemark><name>P91</name><styleUrl>#style5</styleUrl><Point><coordinates>-145.87,-59.64</coordinates></Point></Placemark>
+<Placemark><name>P92</name><styleUrl>#style7</styleUrl><Point><coordinates>52.69,29.02</coordinates></Point></Placemark>
+<Placemark><name>P93</name><styleUrl>#style8</styleUrl><Point><coordinates>106.75,-13.28</coordinates></Point></Placemark>
+<Placemark><name>P94</name><styleUrl>#style10</styleUrl><Point><coordinates>123.42,34.22</coordinates></Point></Placemark>
+<Placemark><name>P95</name><styleUrl>#style6</styleUrl><Point><coordinates>-12.57,49.47</coordinates></Point></Placemark>
+<Placemark><name>P96</name><styleUrl>#style12</styleUrl><Point><coordinates>-42.63,-78.58</coordinates></Point></Placemark>
+<Placemark><name>P97</name><styleUrl>#style11</styleUrl><Point><coordinates>-118.17,50.41</coordinates></Point></Placemark>
+<Placemark><name>P98</name><styleUrl>#style7</styleUrl><Point><coordinates>140.64,49.88</coordinates></Point></Placemark>
+<Placemark><name>P99</name><styleUrl>#style5</styleUrl><Point><coordinates>104.08,-89.49</coordinates></Point></Placemark>
+<Placemark><name>P100</name><styleUrl>#style10</styleUrl><Point><coordinates>157.33,0.27</coordinates></Point></Placemark>
+<Placemark><name>P101</name><styleUrl>#style5</styleUrl><Point><coordinates>-97.78,-78.62</coordinates></Point></Placemark>
+<Placemark><name>P102</name><styleUrl>#style3</styleUrl><Point><coordinates>-74.24,-25.06</coordinates></Point></Placemark>
+<Placemark><name>P103</name><styleUrl>#style15</styleUrl><Point><coordinates>129.89,-21.37</coordinates></Point></Placemark>
+<Placemark><name>P104</name><styleUrl>#style10</styleUrl><Point><coordinates>-149.48,74.99</coordinates></Point></Placemark>
+<Placemark><name>P105</name><styleUrl>#style1</styleUrl><Point><coordinates>6.58,31.38</coordinates></Point></Placemark>
+<Placemark><name>P106</name><styleUrl>#style7</styleUrl><Point><coordinates>-38.78,-75.53</coordinates></Point></Placemark>
+<Placemark><name>P107</name><styleUrl>#style11</styleUrl><Point><coordinates>114.73,-1.98</coordinates></Point></Placemark>
+<Placemark><name>P108</name><styleUrl>#style15</styleUrl><Point><coordinates>-164.16,16.7</coordinates></Point></Placemark>
+<Placemark><name>P109</name><styleUrl>#style14</styleUrl><Point><coordinates>-168.18,-1.6</coordinates></Point></Placemark>
+<Placemark><name>P110</name><styleUrl>#style12</styleUrl><Point><coordinates>5.37,-51.84</coordinates></Point></Placemark>
+<Placemark><name>P111</name><styleUrl>#style11</styleUrl><Point><coordinates>-74.73,-6.55</coordinates></Point></Placemark>
+<Placemark><name>P112</name><styleUrl>#style13</styleUrl><Point><coordinates>95.13,39.27</coordinates></Point></Placemark>
+<Placemark><name>P113</name><styleUrl>#style6</styleUrl><Point><coordinates>-56.79,-64.96</coordinates></Point></Placemark>
+<Placemark><name>P114</name><styleUrl>#style9</styleUrl><Point><coordinates>125.42,80.1</coordinates></Point></Placemark>
+<Placemark><name>P115</name><styleUrl>#style8</styleUrl><Point><coordinates>-20.67,40.71</coordinates></Point></Placemark>
+<Placemark><name>P116</name><styleUrl>#style8</styleUrl><Point><coordinates>-127.68,-41.18</coordinates></Point></Placemark>
+<Placemark><name>P117</name><styleUrl>#style4</styleUrl><Point><coordinates>72.03,0.05</coordinates></Point></Placemark>
+<Placemark><name>P118</name><styleUrl>#style9</styleUrl><Point><coordinates>-59.25,62.37</coordinates></Point></Placemark>
+<Placemark><name>P119</name><styleUrl>#style8</styleUrl><Point><coordinates>-85.35,-72.23</coordinates></Point></Placemark>
+<Placemark><name>P120</name><styleUrl>#style6</styleUrl><Point><coordinates>82.63,-73.32</coordinates></Point></Placemark>
+<Placemark><name>P121</name><styleUrl>#style2</styleUrl><Point><coordinates>-63.69,-21.38</coordinates></Point></Placemark>
+<Placemark><name>P122</name><styleUrl>#style9</styleUrl><Point><coordinates>39.85,-79.86</coordinates></Point></Placemark>
+<Placemark><name>P123</name><styleUrl>#style15</styleUrl><Point><coordinates>169.35,75.41</coordinates></Point></Placemark>
+<Placemark><name>P124</name><styleUrl>#style6</styleUrl><Point><coordinates>-72.58,-0.28</coordinates></Point></Placemark>
+<Placemark><name>P125</name><styleUrl>#style5</styleUrl><Point><coordinates>159.48,-52.94</coordinates></Point></Placemark>
+<Placemark><name>P126</name><styleUrl>#style14</styleUrl><Point><coordinates>-25,-30.92</coordinates></Point></Placemark>
+<Placemark><name>P127</name><styleUrl>#style6</styleUrl><Point><coordinates>-113.76,39.75</coordinates></Point></Placemark>
+<Placemark><name>P128</name><styleUrl>#style9</styleUrl><Point><coordinates>-176.46,-55.89</coordinates></Point></Placemark>
+<Placemark><name>P129</name><styleUrl>#style7</styleUrl><Point><coordinates>-75.66,5.06</coordinates></Point></Placemark>
+<Placemark><name>P130</name><styleUrl>#style7</styleUrl><Point><coordinates>149.85,56.75</coordinates></Point></Placemark>
+<Placemark><name>P131</name><styleUrl>#style10</styleUrl><Point><coordinates>-150.02,-72.3</coordinates></Point></Placemark>
+<Placemark><name>P132</name><styleUrl>#style1</styleUrl><Point><coordinates>61.22,-8.78</coordinates></Point></Placemark>
+<Placemark><name>P133</name><styleUrl>#style8</styleUrl><Point><coordinates>134.22,11.83</coordinates></Point></Placemark>
+<Placemark><name>P134</name><styleUrl>#style4</styleUrl><Point><coordinates>-37.73,-71.14</coordinates></Point></Placemark>
+<Placemark><name>P135</name><styleUrl>#style8</styleUrl><Point><coordinates>47.75,-2.51</coordinates></Point></Placemark>
+<Placemark><name>P136</name><styleUrl>#style1</styleUrl><Point><coordinates>-120.07,-34.55</coordinates></Point></Placemark>
+<Placemark><name>P137</name><styleUrl>#style9</styleUrl><Point><coordinates>156.82,-18.62</coordinates></Point></Placemark>
+<Placemark><name>P138</name><styleUrl>#style7</styleUrl><Point><coordinates>-90.42,54.87</coordinates></Point></Placemark>
+<Placemark><name>P139</name><styleUrl>#style6</styleUrl><Point><coordinates>129.98,-3.82</coordinates></Point></Placemark>
+<Placemark><name>P140</name><styleUrl>#style3</styleUrl><Point><coordinates>-99.69,65.39</coordinates></Point></Placemark>
+<Placemark><name>P141</name><styleUrl>#style4</styleUrl><Point><coordinates>143.35,58.59</coordinates></Point></Placemark>
+<Placemark><name>P142</name><styleUrl>#style12</styleUrl><Point><coordinates>-116.57,-24.34</coordinates></Point></Placemark>
+<Placemark><name>P143</name><styleUrl>#style11</styleUrl><Point><coordinates>105.31,21.28</coordinates></Point></Placemark>
+<Placemark><name>P144</name><styleUrl>#style12</styleUrl><Point><coordinates>-8.71,-64.8</coordinates></Point></Placemark>
+<Placemark><name>P145</name><styleUrl>#style7</styleUrl><Point><coordinates>100.38,35.44</coordinates></Point></Placemark>
+<Placemark><name>P146</name><styleUrl>#style4</styleUrl><Point><coordinates>90.33,-13.73</coordinates></Point></Placemark>
+<Placemark><name>P147</name><styleUrl>#style3</styleUrl><Point><coordinates>159.69,-62.94</coordinates></Point></Placemark>
+<Placemark><name>P148</name><styleUrl>#style14</styleUrl><Point><coordinates>-30.82,-28.68</coordinates></Point></Placemark>
+<Placemark><name>P149</name><styleUrl>#style5</styleUrl><Point><coordinates>104.25,69.54</coordinates></Point></Placemark>
+<Placemark><name>P150</name><styleUrl>#style13</styleUrl><Point><coordinates>-61.8,89.67</coordinates></Point></Placemark>
+<Placemark><name>P151</name><styleUrl>#style3</styleUrl><Point><coordinates>157.5,-16.15</coordinates></Point></Placemark>
+<Placemark><name>P152</name><styleUrl>#style4</styleUrl><Point><coordinates>-79.55,-51.94</coordinates></Point></Placemark>
+<Placemark><name>P153</name><styleUrl>#style5</styleUrl><Point><coordinates>-0.83,42.82</coordinates></Point></Placemark>
+<Placemark><name>P154</name><styleUrl>#style3</styleUrl><Point><coordinates>136.86,-59.01</coordinates></Point></Placemark>
+<Placemark><name>P155</name><styleUrl>#style14</styleUrl><Point><coordinates>-125.4,-48.45</coordinates></Point></Placemark>
+<Placemark><name>P156</name><styleUrl>#style6</styleUrl><Point><coordinates>-62.54,29.77</coordinates></Point></Placemark>
+<Placemark><name>P157</name><styleUrl>#style9</styleUrl><Point><coordinates>-154.52,-86.51</coordinates></Point></Placemark>
+<Placemark><name>P158</name><styleUrl>#style4</styleUrl><Point><coordinates>-13.61,17.14</coordinates></Point></Placemark>
+<Placemark><name>P159</name><styleUrl>#style12</styleUrl><Point><coordinates>149.91,-80.17</coordinates></Point></Placemark>
+<Placemark><name>P160</name><styleUrl>#style14</styleUrl><Point><coordinates>18.51,30.22</coordinates></Point></Placemark>
+<Placemark><name>P161</name><styleUrl>#style8</styleUrl><Point><coordinates>-67.8,59.66</coordinates></Point></Placemark>
+<Placemark><name>P162</name><styleUrl>#style5</styleUrl><Point><coordinates>152.35,-47.43</coordinates></Point></Placemark>
+<Placemark><name>P163</name><styleUrl>#style12</styleUrl><Point><coordinates>-17.67,-12.89</coordinates></Point></Placemark>
+<Placemark><name>P164</name><styleUrl>#style14</styleUrl><Point><coordinates>16.82,32.01</coordinates></Point></Placemark>
+<Placemark><name>P165</name><styleUrl>#style13</styleUrl><Point><coordinates>9.24,-10.84</coordinates></Point></Placemark>
+<Placemark><name>P166</name><styleUrl>#style1</styleUrl><Point><coordinates>-22.74,-49.58</coordinates></Point></Placemark>
+<Placemark><name>P167</name><styleUrl>#style15</styleUrl><Point><coordinates>129.19,69.41</coordinates></Point></Placemark>
+<Placemark><name>P168</name><styleUrl>#style10</styleUrl><Point><coordinates>10.45,-20.62</coordinates></Point></Placemark>
+<Placemark><name>P169</name><styleUrl>#style6</styleUrl><Point><coordinates>-166.19,69.48</coordinates></Point></Placemark>
+<Placemark><name>P170</name><styleUrl>#style2</styleUrl><Point><coordinates>-115.37,38.18</coordinates></Point></Placemark>
+<Placemark><name>P171</name><styleUrl>#style1</styleUrl><Point><coordinates>-53.27,-53.29</coordinates></Point></Placemark>
+<Placemark><name>P172</name><styleUrl>#style6</styleUrl><Point><coordinates>-164.96,33.39</coordinates></Point></Placemark>
+<Placemark><name>P173</name><styleUrl>#style4</styleUrl><Point><coordinates>-129.81,89.11</coordinates></Point></Placemark>
+<Placemark><name>P174</name><styleUrl>#style13</styleUrl><Point><coordinates>-66.48,-78.91</coordinates></Point></Placemark>
+<Placemark><name>P175</name><styleUrl>#style12</styleUrl><Point><coordinates>84.54,77.07</coordinates></Point></Placemark>
+<Placemark><name>P176</name><styleUrl>#style4</styleUrl><Point><coordinates>17.35,2.38</coordinates></Point></Placemark>
+<Placemark><name>P177</name><styleUrl>#style8</styleUrl><Point><coordinates>112.9,-67.51</coordinates></Point></Placemark>
+<Placemark><name>P178</name><styleUrl>#style10</styleUrl><Point><coordinates>39.83,-85.1</coordinates></Point></Placemark>
+<Placemark><name>P179</name><styleUrl>#style10</styleUrl><Point><coordinates>75.57,-24.95</coordinates></Point></Placemark>
+<Placemark><name>P180</name><styleUrl>#style2</styleUrl><Point><coordinates>-100.52,-3.39</coordinates></Point></Placemark>
+<Placemark><name>P181</name><styleUrl>#style6</styleUrl><Point><coordinates>-95.99,22.2</coordinates></Point></Placemark>
+<Placemark><name>P182</name><styleUrl>#style5</styleUrl><Point><coordinates>125.9,-35.33</coordinates></Point></Placemark>
+<Placemark><name>P183</name><styleUrl>#style11</styleUrl><Point><coordinates>170.51,66.16</coordinates></Point></Placemark>
+<Placemark><name>P184</name><styleUrl>#style2</styleUrl><Point><coordinates>-143.1,82.2</coordinates></Point></Placemark>
+<Placemark><name>P185</name><styleUrl>#style11</styleUrl><Point><coordinates>-96.93,-5.93</coordinates></Point></Placemark>
+<Placemark><name>P186</name><styleUrl>#style12</styleUrl><Point><coordinates>3.83,69.39</coordinates></Point></Placemark>
+<Placemark><name>P187</name><styleUrl>#style12</styleUrl><Point><coordinates>-32.89,79.82</coordinates></Point></Placemark>
+<Placemark><name>P188</name><styleUrl>#style7</styleUrl><Point><coordinates>-41.46,85.55</coordinates></Point></Placemark>
+<Placemark><name>P189</name><styleUrl>#style15</styleUrl><Point><coordinates>142.68,-37.73</coordinates></Point></Placemark>
+<Placemark><name>P190</name><styleUrl>#style6</styleUrl><Point><coordinates>-76.2,-53.2</coordinates></Point></Placemark>
+<Placemark><name>P191</name><styleUrl>#style9</styleUrl><Point><coordinates>-153.24,32.77</coordinates></Point></Placemark>
+<Placemark><name>P192</name><styleUrl>#style7</styleUrl><Point><coordinates>0.21,88.95</coordinates></Point></Placemark>
+<Placemark><name>P193</name><styleUrl>#style14</styleUrl><Point><coordinates>117.31,65.95</coordinates></Point></Placemark>
+<Placemark><name>P194</name><styleUrl>#style11</styleUrl><Point><coordinates>-71.92,-30.53</coordinates></Point></Placemark>
+<Placemark><name>P195</name><styleUrl>#style14</styleUrl><Point><coordinates>35.71,47.51</coordinates></Point></Placemark>
+<Placemark><name>P196</name><styleUrl>#style9</styleUrl><Point><coordinates>96.95,-63.83</coordinates></Point></Placemark>
+<Placemark><name>P197</name><styleUrl>#style13</styleUrl><Point><coordinates>-156.03,59.3</coordinates></Point></Placemark>
+<Placemark><name>P198</name><styleUrl>#style4</styleUrl><Point><coordinates>39.54,-2.77</coordinates></Point></Placemark>
+<Placemark><name>P199</name><styleUrl>#style12</styleUrl><Point><coordinates>-171.23,-52.13</coordinates></Point></Placemark>
+<Placemark><name>P200</name><styleUrl>#style12</styleUrl><Point><coordinates>-28.55,-56.31</coordinates></Point></Placemark>
+<Placemark><name>P201</name><styleUrl>#style15</styleUrl><Point><coordinates>-29.87,58.11</coordinates></Point></Placemark>
+<Placemark><name>P202</name><styleUrl>#style6</styleUrl><Point><coordinates>133.13,-26.31</coordinates></Point></Placemark>
+<Placemark><name>P203</name><styleUrl>#style4</styleUrl><Point><coordinates>178.1,48.34</coordinates></Point></Placemark>
+<Placemark><name>P204</name><styleUrl>#style5</styleUrl><Point><coordinates>-20.69,-2.17</coordinates></Point></Placemark>
+<Placemark><name>P205</name><styleUrl>#style9</styleUrl><Point><coordinates>99.34,-4.86</coordinates></Point></Placemark>
+<Placemark><name>P206</name><styleUrl>#style11</styleUrl><Point><coordinates>136.03,60.75</coordinates></Point></Placemark>
+<Placemark><name>P207</name><styleUrl>#style13</styleUrl><Point><coordinates>-42.38,66</coordinates></Point></Placemark>
+<Placemark><name>P208</name><styleUrl>#style7</styleUrl><Point><coordinates>-144.34,88.06</coordinates></Point></Placemark>
+<Placemark><name>P209</name><styleUrl>#style4</styleUrl><Point><coordinates>104.08,-27.45</coordinates></Point></Placemark>
+<Placemark><name>P210</name><styleUrl>#style1</styleUrl><Point><coordinates>-178.24,57.21</coordinates></Point></Placemark>
+<Placemark><name>P211</name><styleUrl>#style11</styleUrl><Point><coordinates>-100.6,32.67</coordinates></Point></Placemark>
+<Placemark><name>P212</name><styleUrl>#style13</styleUrl><Point><coordinates>-33.66,-14.35</coordinates></Point></Placemark>
+<Placemark><name>P213</name><styleUrl>#style5</styleUrl><Point><coordinates>-132.92,70.48</coordinates></Point></Placemark>
+<Placemark><name>P214</name><styleUrl>#style11</styleUrl><Point><coordinates>-78.09,42.06</coordinates></Point></Placemark>
+<Placemark><name>P215</name><styleUrl>#style15</styleUrl><Point><coordinates>-152.03,10.48</coordinates></Point></Placemark>
+<Placemark><name>P216</name><styleUrl>#style2</styleUrl><Point><coordinates>130.88,88.05</coordinates></Point></Placemark>
+<Placemark><name>P217</name><styleUrl>#style13</styleUrl><Point><coordinates>39.06,70.61</coordinates></Point></Placemark>
+<Placemark><name>P218</name><styleUrl>#style8</styleUrl><Point><coordinates>-66.97,-28.98</coordinates></Point></Placemark>
+<Placemark><name>P219</name><styleUrl>#style6</styleUrl><Point><coordinates>-48.33,-77.45</coordinates></Point></Placemark>
+<Placemark><name>P220</name><styleUrl>#style13</styleUrl><Point><coordinates>-50.68,-67.53</coordinates></Point></Placemark>
+<Placemark><name>P221</name><styleUrl>#style8</styleUrl><Point><coordinates>26.81,-47.56</coordinates></Point></Placemark>
+<Placemark><name>P222</name><styleUrl>#style8</styleUrl><Point><coordinates>33.11,-44.65</coordinates></Point></Placemark>
+<Placemark><name>P223</name><styleUrl>#style1</styleUrl><Point><coordinates>-60.03,20.52</coordinates></Point></Placemark>
+<Placemark><name>P224</name><styleUrl>#style5</styleUrl><Point><coordinates>-97.69,5.8</coordinates></Point></Placemark>
+<Placemark><name>P225</name><styleUrl>#style11</styleUrl><Point><coordinates>-90.2,-64.95</coordinates></Point></Placemark>
+<Placemark><name>P226</name><styleUrl>#style8</styleUrl><Point><coordinates>89.35,-54.49</coordinates></Point></Placemark>
+<Placemark><name>P227</name><styleUrl>#style11</styleUrl><Point><coordinates>68.1,-83.73</coordinates></Point></Placemark>
+<Placemark><name>P228</name><styleUrl>#style11</styleUrl><Point><coordinates>80.61,-62.73</coordinates></Point></Placemark>
+<Placemark><name>P229</name><styleUrl>#style12</styleUrl><Point><coordinates>126.76,-87.62</coordinates></Point></Placemark>
+<Placemark><name>P230</name><styleUrl>#style10</styleUrl><Point><coordinates>-123.44,-51.45</coordinates></Point></Placemark>
+<Placemark><name>P231</name><styleUrl>#style1</styleUrl><Point><coordinates>44.17,-56.09</coordinates></Point></Placemark>
+<Placemark><name>P232</name><styleUrl>#style8</styleUrl><Point><coordinates>109.38,9.78</coordinates></Point></Placemark>
+<Placemark><name>P233</name><styleUrl>#style2</styleUrl><Point><coordinates>-29.57,-75.11</coordinates></Point></Placemark>
+<Placemark><name>P234</name><styleUrl>#style13</styleUrl><Point><coordinates>-89.03,-41.12</coordinates></Point></Placemark>
+<Placemark><name>P235</name><styleUrl>#style6</styleUrl><Point><coordinates>141.77,-49.1</coordinates></Point></Placemark>
+<Placemark><name>P236</name><styleUrl>#style4</styleUrl><Point><coordinates>81.75,36.52</coordinates></Point></Placemark>
+<Placemark><name>P237</name><styleUrl>#style13</styleUrl><Point><coordinates>136.78,22.66</coordinates></Point></Placemark>
+<Placemark><name>P238</name><styleUrl>#style5</styleUrl><Point><coordinates>-50.82,-2.57</coordinates></Point></Placemark>
+<Placemark><name>P239</name><styleUrl>#style14</styleUrl><Point><coordinates>-92.09,-59.81</coordinates></Point></Placemark>
+<Placemark><name>P240</name><styleUrl>#style14</styleUrl><Point><coordinates>120.71,60.55</coordinates></Point></Placemark>
+<Placemark><name>P241</name><styleUrl>#style2</styleUrl><Point><coordinates>-155.22,6.77</coordinates></Point></Placemark>
+<Placemark><name>P242</name><styleUrl>#style12</styleUrl><Point><coordinates>-64.63,-3.77</coordinates></Point></Placemark>
+<Placemark><name>P243</name><styleUrl>#style14</styleUrl><Point><coordinates>1.03,48.79</coordinates></Point></Placemark>
+<Placemark><name>P244</name><styleUrl>#style8</styleUrl><Point><coordinates>5.61,74.24</coordinates></Point></Placemark>
+<Placemark><name>P245</name><styleUrl>#style5</styleUrl><Point><coordinates>-32.06,-82.07</coordinates></Point></Placemark>
+<Placemark><name>P246</name><styleUrl>#style11</styleUrl><Point><coordinates>-55.63,74.94</coordinates></Point></Placemark>
+<Placemark><name>P247</name><styleUrl>#style15</styleUrl><Point><coordinates>147.29,-76.04</coordinates></Point></Placemark>
+<Placemark><name>P248</name><styleUrl>#style7</styleUrl><Point><coordinates>-72.37,7.05</coordinates></Point></Placemark>
+<Placemark><name>P249</name><styleUrl>#style14</styleUrl><Point><coordinates>-132.92,-80.32</coordinates></Point></Placemark>
+<Placemark><name>P250</name><styleUrl>#style7</styleUrl><Point><coordinates>-96.35,-53.85</coordinates></Point></Placemark>
+<Placemark><name>P251</name><styleUrl>#style8</styleUrl><Point><coordinates>51.8,87.04</coordinates></Point></Placemark>
+<Placemark><name>P252</name><styleUrl>#style11</styleUrl><Point><coordinates>15.04,17.25</coordinates></Point></Placemark>
+<Placemark><name>P253</name><styleUrl>#style8</styleUrl><Point><coordinates>173.71,-18.76</coordinates></Point></Placemark>
+<Placemark><name>P254</name><styleUrl>#style2</styleUrl><Point><coordinates>-101.52,-82.32</coordinates></Point></Placemark>
+<Placemark><name>P255</name><styleUrl>#style2</styleUrl><Point><coordinates>80.62,65.63</coordinates></Point></Placemark>
+<Placemark><name>P256</name><styleUrl>#style10</styleUrl><Point><coordinates>-146.54,56.44</coordinates></Point></Placemark>
+<Placemark><name>P257</name><styleUrl>#style13</styleUrl><Point><coordinates>169.87,-48.36</coordinates></Point></Placemark>
+<Placemark><name>P258</name><styleUrl>#style2</styleUrl><Point><coordinates>21.96,37.79</coordinates></Point></Placemark>
+<Placemark><name>P259</name><styleUrl>#style7</styleUrl><Point><coordinates>172.43,-3.92</coordinates></Point></Placemark>
+<Placemark><name>P260</name><styleUrl>#style3</styleUrl><Point><coordinates>78.09,73.08</coordinates></Point></Placemark>
+<Placemark><name>P261</name><styleUrl>#style9</styleUrl><Point><coordinates>-131.94,-51.13</coordinates></Point></Placemark>
+<Placemark><name>P262</name><styleUrl>#style6</styleUrl><Point><coordinates>-49.06,-27.08</coordinates></Point></Placemark>
+<Placemark><name>P263</name><styleUrl>#style4</styleUrl><Point><coordinates>-152.22,37.6</coordinates></Point></Placemark>
+<Placemark><name>P264</name><styleUrl>#style12</styleUrl><Point><coordinates>-166,-0.48</coordinates></Point></Placemark>
+<Placemark><name>P265</name><styleUrl>#style5</styleUrl><Point><coordinates>-45.51,16.67</coordinates></Point></Placemark>
+<Placemark><name>P266</name><styleUrl>#style9</styleUrl><Point><coordinates>-146.96,34.07</coordinates></Point></Placemark>
+<Placemark><name>P267</name><styleUrl>#style9</styleUrl><Point><coordinates>38.07,-26.68</coordinates></Point></Placemark>
+<Placemark><name>P268</name><styleUrl>#style4</styleUrl><Point><coordinates>-131.88,-80.41</coordinates></Point></Placemark>
+<Placemark><name>P269</name><styleUrl>#style2</styleUrl><Point><coordinates>-77.73,38.67</coordinates></Point></Placemark>
+<Placemark><name>P270</name><styleUrl>#style2</styleUrl><Point><coordinates>-5.2,17.43</coordinates></Point></Placemark>
+<Placemark><name>P271</name><styleUrl>#style6</styleUrl><Point><coordinates>-96.18,-52.08</coordinates></Point></Placemark>
+<Placemark><name>P272</name><styleUrl>#style11</styleUrl><Point><coordinates>-146.27,-17.02</coordinates></Point></Placemark>
+<Placemark><name>P273</name><styleUrl>#style7</styleUrl><Point><coordinates>-175.92,-1.86</coordinates></Point></Placemark>
+<Placemark><name>P274</name><styleUrl>#style12</styleUrl><Point><coordinates>61.02,3.81</coordinates></Point></Placemark>
+<Placemark><name>P275</name><styleUrl>#style14</styleUrl><Point><coordinates>-1.2,30.59</coordinates></Point></Placemark>
+<Placemark><name>P276</name><styleUrl>#style8</styleUrl><Point><coordinates>-2.47,47.67</coordinates></Point></Placemark>
+<Placemark><name>P277</name><styleUrl>#style11</styleUrl><Point><coordinates>175.33,36.35</coordinates></Point></Placemark>
+<Placemark><name>P278</name><styleUrl>#style15</styleUrl><Point><coordinates>177.86,-8.06</coordinates></Point></Placemark>
+<Placemark><name>P279</name><styleUrl>#style5</styleUrl><Point><coordinates>136.28,-19.59</coordinates></Point></Placemark>
+<Placemark><name>P280</name><styleUrl>#style5</styleUrl><Point><coordinates>-37.11,0.24</coordinates></Point></Placemark>
+<Placemark><name>P281</name><styleUrl>#style3</styleUrl><Point><coordinates>-149.62,-89.37</coordinates></Point></Placemark>
+<Placemark><name>P282</name><styleUrl>#style4</styleUrl><Point><coordinates>42.63,-60.55</coordinates></Point></Placemark>
+<Placemark><name>P283</name><styleUrl>#style14</styleUrl><Point><coordinates>-20.14,-19.54</coordinates></Point></Placemark>
+<Placemark><name>P284</name><styleUrl>#style15</styleUrl><Point><coordinates>84.42,-8.61</coordinates></Point></Placemark>
+<Placemark><name>P285</name><styleUrl>#style9</styleUrl><Point><coordinates>-8.25,41.38</coordinates></Point></Placemark>
+<Placemark><name>P286</name><styleUrl>#style7</styleUrl><Point><coordinates>120.46,-5.87</coordinates></Point></Placemark>
+<Placemark><name>P287</name><styleUrl>#style9</styleUrl><Point><coordinates>-7.73,80.54</coordinates></Point></Placemark>
+<Placemark><name>P288</name><styleUrl>#style15</styleUrl><Point><coordinates>12.26,-37.21</coordinates></Point></Placemark>
+<Placemark><name>P289</name><styleUrl>#style6</styleUrl><Point><coordinates>102.26,-13.72</coordinates></Point></Placemark>
+<Placemark><name>P290</name><styleUrl>#style2</styleUrl><Point><coordinates>-71.54,-74.15</coordinates></Point></Placemark>
+<Placemark><name>P291</name><styleUrl>#style2</styleUrl><Point><coordinates>12.07,-54.36</coordinates></Point></Placemark>
+<Placemark><name>P292</name><styleUrl>#style6</styleUrl><Point><coordinates>94.3,-66.68</coordinates></Point></Placemark>
+<Placemark><name>P293</name><styleUrl>#style6</styleUrl><Point><coordinates>26,20.26</coordinates></Point></Placemark>
+<Placemark><name>P294</name><styleUrl>#style11</styleUrl><Point><coordinates>1.63,-62.66</coordinates></Point></Placemark>
+<Placemark><name>P295</name><styleUrl>#style15</styleUrl><Point><coordinates>-165.31,-70.5</coordinates></Point></Placemark>
+<Placemark><name>P296</name><styleUrl>#style5</styleUrl><Point><coordinates>65.48,-64.07</coordinates></Point></Placemark>
+<Placemark><name>P297</name><styleUrl>#style14</styleUrl><Point><coordinates>88,34.22</coordinates></Point></Placemark>
+<Placemark><name>P298</name><styleUrl>#style9</styleUrl><Point><coordinates>-149.98,80.12</coordinates></Point></Placemark>
+<Placemark><name>P299</name><styleUrl>#style7</styleUrl><Point><coordinates>137.08,-11.9</coordinates></Point></Placemark>
+<Placemark><name>P300</name><styleUrl>#style10</styleUrl><Point><coordinates>32.36,87.1</coordinates></Point></Placemark>
+<Placemark><name>P301</name><styleUrl>#style10</styleUrl><Point><coordinates>-175.65,38.19</coordinates></Point></Placemark>
+<Placemark><name>P302</name><styleUrl>#style3</styleUrl><Point><coordinates>173.75,71.75</coordinates></Point></Placemark>
+<Placemark><name>P303</name><styleUrl>#style8</styleUrl><Point><coordinates>116.45,-44.55</coordinates></Point></Placemark>
+<Placemark><name>P304</name><styleUrl>#style8</styleUrl><Point><coordinates>-136.91,54.27</coordinates></Point></Placemark>
+<Placemark><name>P305</name><styleUrl>#style2</styleUrl><Point><coordinates>-7.39,-68.34</coordinates></Point></Placemark>
+<Placemark><name>P306</name><styleUrl>#style10</styleUrl><Point><coordinates>-18.09,-27.02</coordinates></Point></Placemark>
+<Placemark><name>P307</name><styleUrl>#style6</styleUrl><Point><coordinates>84.38,-0.16</coordinates></Point></Placemark>
+<Placemark><name>P308</name><styleUrl>#style15</styleUrl><Point><coordinates>66.82,-66.01</coordinates></Point></Placemark>
+<Placemark><name>P309</name><styleUrl>#style14</styleUrl><Point><coordinates>-87.1,-37.59</coordinates></Point></Placemark>
+<Placemark><name>P310</name><styleUrl>#style13</styleUrl><Point><coordinates>14.28,-59.04</coordinates></Point></Placemark>
+<Placemark><name>P311</name><styleUrl>#style1</styleUrl><Point><coordinates>26.84,-59.5</coordinates></Point></Placemark>
+<Placemark><name>P312</name><styleUrl>#style1</styleUrl><Point><coordinates>157.91,-24.86</coordinates></Point></Placemark>
+<Placemark><name>P313</name><styleUrl>#style12</styleUrl><Point><coordinates>-152.34,63.74</coordinates></Point></Placemark>
+<Placemark><name>P314</name><styleUrl>#style11</styleUrl><Point><coordinates>-77.44,-12.12</coordinates></Point></Placemark>
+<Placemark><name>P315</name><styleUrl>#style4</styleUrl><Point><coordinates>-153.92,16.22</coordinates></Point></Placemark>
+<Placemark><name>P316</name><styleUrl>#style14</styleUrl><Point><coordinates>99.9,5.57</coordinates></Point></Placemark>
+<Placemark><name>P317</name><styleUrl>#style9</styleUrl><Point><coordinates>44.4,50.4</coordinates></Point></Placemark>
+<Placemark><name>P318</name><styleUrl>#style14</styleUrl><Point><coordinates>153.63,-12.48</coordinates></Point></Placemark>
+<Placemark><name>P319</name><styleUrl>#style8</styleUrl><Point><coordinates>-133.21,-5.59</coordinates></Point></Placemark>
+<Placemark><name>P320</name><styleUrl>#style6</styleUrl><Point><coordinates>58.08,-78.6</coordinates></Point></Placemark>
+<Placemark><name>P321</name><styleUrl>#style14</styleUrl><Point><coordinates>-146.62,35.97</coordinates></Point></Placemark>
+<Placemark><name>P322</name><styleUrl>#style12</styleUrl><Point><coordinates>-46.68,15.53</coordinates></Point></Placemark>
+<Placemark><name>P323</name><styleUrl>#style1</styleUrl><Point><coordinates>0.19,24.05</coordinates></Point></Placemark>
+<Placemark><name>P324</name><styleUrl>#style1</styleUrl><Point><coordinates>150.48,-59.11</coordinates></Point></Placemark>
+<Placemark><name>P325</name><styleUrl>#style4</styleUrl><Point><coordinates>-52.86,-85.85</coordinates></Point></Placemark>
+<Placemark><name>P326</name><styleUrl>#style7</styleUrl><Point><coordinates>-90.5,-71.91</coordinates></Point></Placemark>
+<Placemark><name>P327</name><styleUrl>#style5</styleUrl><Point><coordinates>27.08,-57.8</coordinates></Point></Placemark>
+<Placemark><name>P328</name><styleUrl>#style15</styleUrl><Point><coordinates>142.23,48.76</coordinates></Point></Placemark>
+<Placemark><name>P329</name><styleUrl>#style6</styleUrl><Point><coordinates>61.02,-2.31</coordinates></Point></Placemark>
+<Placemark><name>P330</name><styleUrl>#style2</styleUrl><Point><coordinates>172.27,-61.16</coordinates></Point></Placemark>
+<Placemark><name>P331</name><styleUrl>#style4</styleUrl><Point><coordinates>34.61,21.93</coordinates></Point></Placemark>
+<Placemark><name>P332</name><styleUrl>#style5</styleUrl><Point><coordinates>-129.06,42.77</coordinates></Point></Placemark>
+<Placemark><name>P333</name><styleUrl>#style10</styleUrl><Point><coordinates>155.55,-11.72</coordinates></Point></Placemark>
+<Placemark><name>P334</name><styleUrl>#style2</styleUrl><Point><coordinates>150.8,71.36</coordinates></Point></Placemark>
+<Placemark><name>P335</name><styleUrl>#style14</styleUrl><Point><coordinates>78.73,-88.56</coordinates></Point></Placemark>
+<Placemark><name>P336</name><styleUrl>#style14</styleUrl><Point><coordinates>-149.55,47.36</coordinates></Point></Placemark>
+<Placemark><name>P337</name><styleUrl>#style5</styleUrl><Point><coordinates>-41.55,17.76</coordinates></Point></Placemark>
+<Placemark><name>P338</name><styleUrl>#style3</styleUrl><Point><coordinates>-162.18,35.8</coordinates></Point></Placemark>
+<Placemark><name>P339</name><styleUrl>#style15</styleUrl><Point><coordinates>121.67,-31.98</coordinates></Point></Placemark>
+<Placemark><name>P340</name><styleUrl>#style12</styleUrl><Point><coordinates>50.88,15.7</coordinates></Point></Placemark>
+<Placemark><name>P341</name><styleUrl>#style9</styleUrl><Point><coordinates>-14.95,3.74</coordinates></Point></Placemark>
+<Placemark><name>P342</name><styleUrl>#style1</styleUrl><Point><coordinates>-11.76,49.64</coordinates></Point></Placemark>
+<Placemark><name>P343</name><styleUrl>#style11</styleUrl><Point><coordinates>-64.95,-72.84</coordinates></Point></Placemark>
+<Placemark><name>P344</name><styleUrl>#style8</styleUrl><Point><coordinates>145.11,-7.65</coordinates></Point></Placemark>
+<Placemark><name>P345</name><styleUrl>#style10</styleUrl><Point><coordinates>-97.23,-75.26</coordinates></Point></Placemark>
+<Placemark><name>P346</name><styleUrl>#style1</styleUrl><Point><coordinates>116.5,36.34</coordinates></Point></Placemark>
+<Placemark><name>P347</name><styleUrl>#style13</styleUrl><Point><coordinates>146.51,1.58</coordinates></Point></Placemark>
+<Placemark><name>P348</name><styleUrl>#style6</styleUrl><Point><coordinates>-178.91,5.06</coordinates></Point></Placemark>
+<Placemark><name>P349</name><styleUrl>#style15</styleUrl><Point><coordinates>-37.02,-18.12</coordinates></Point></Placemark>
+<Placemark><name>P350</name><styleUrl>#style4</styleUrl><Point><coordinates>43.77,59.21</coordinates></Point></Placemark>
+<Placemark><name>P351</name><styleUrl>#style5</styleUrl><Point><coordinates>-48.23,-32.42</coordinates></Point></Placemark>
+<Placemark><name>P352</name><styleUrl>#style15</styleUrl><Point><coordinates>117.54,-85.9</coordinates></Point></Placemark>
+<Placemark><name>P353</name><styleUrl>#style8</styleUrl><Point><coordinates>-28.9,22.93</coordinates></Point></Placemark>
+<Placemark><name>P354</name><styleUrl>#style14</styleUrl><Point><coordinates>170.26,53.22</coordinates></Point></Placemark>
+<Placemark><name>P355</name><styleUrl>#style1</styleUrl><Point><coordinates>-16.98,-10.89</coordinates></Point></Placemark>
+<Placemark><name>P356</name><styleUrl>#style3</styleUrl><Point><coordinates>64.08,-63.43</coordinates></Point></Placemark>
+<Placemark><name>P357</name><styleUrl>#style15</styleUrl><Point><coordinates>-37.59,53.81</coordinates></Point></Placemark>
+<Placemark><name>P358</name><styleUrl>#style6</styleUrl><Point><coordinates>-172.41,-6.73</coordinates></Point></Placemark>
+<Placemark><name>P359</name><styleUrl>#style5</styleUrl><Point><coordinates>74.99,-17.97</coordinates></Point></Placemark>
+<Placemark><name>P360</name><styleUrl>#style9</styleUrl><Point><coordinates>169.53,-15.32</coordinates></Point></Placemark>
+<Placemark><name>P361</name><styleUrl>#style8</styleUrl><Point><coordinates>-25.99,42.67</coordinates></Point></Placemark>
+<Placemark><name>P362</name><styleUrl>#style2</styleUrl><Point><coordinates>-99.28,26.47</coordinates></Point></Placemark>
+<Placemark><name>P363</name><styleUrl>#style2</styleUrl><Point><coordinates>-42.92,-37.16</coordinates></Point></Placemark>
+<Placemark><name>P364</name><styleUrl>#style7</styleUrl><Point><coordinates>20.52,13.65</coordinates></Point></Placemark>
+<Placemark><name>P365</name><styleUrl>#style5</styleUrl><Point><coordinates>-132.35,-0.93</coordinates></Point></Placemark>
+<Placemark><name>P366</name><styleUrl>#style6</styleUrl><Point><coordinates>-130.92,-33.28</coordinates></Point></Placemark>
+<Placemark><name>P367</name><styleUrl>#style14</styleUrl><Point><coordinates>5.99,-76.12</coordinates></Point></Placemark>
+<Placemark><name>P368</name><styleUrl>#style10</styleUrl><Point><coordinates>-57.29,-45.25</coordinates></Point></Placemark>
+<Placemark><name>P369</name><styleUrl>#style6</styleUrl><Point><coordinates>95.8,18.88</coordinates></Point></Placemark>
+<Placemark><name>P370</name><styleUrl>#style14</styleUrl><Point><coordinates>-109.09,76.5</coordinates></Point></Placemark>
+<Placemark><name>P371</name><styleUrl>#style8</styleUrl><Point><coordinates>-60.5,30.25</coordinates></Point></Placemark>
+<Placemark><name>P372</name><styleUrl>#style13</styleUrl><Point><coordinates>-103.54,-9.93</coordinates></Point></Placemark>
+<Placemark><name>P373</name><styleUrl>#style5</styleUrl><Point><coordinates>-52.08,-35.56</coordinates></Point></Placemark>
+<Placemark><name>P374</name><styleUrl>#style12</styleUrl><Point><coordinates>-12.98,-7.61</coordinates></Point></Placemark>
+<Placemark><name>P375</name><styleUrl>#style11</styleUrl><Point><coordinates>-52.33,25.98</coordinates></Point></Placemark>
+<Placemark><name>P376</name><styleUrl>#style6</styleUrl><Point><coordinates>-95.36,-78.02</coordinates></Point></Placemark>
+<Placemark><name>P377</name><styleUrl>#style15</styleUrl><Point><coordinates>12.15,15.03</coordinates></Point></Placemark>
+<Placemark><name>P378</name><styleUrl>#style15</styleUrl><Point><coordinates>69.92,-68.69</coordinates></Point></Placemark>
+<Placemark><name>P379</name><styleUrl>#style7</styleUrl><Point><coordinates>-70.2,-83.39</coordinates></Point></Placemark>
+<Placemark><name>P380</name><styleUrl>#style2</styleUrl><Point><coordinates>-138.41,-3.83</coordinates></Point></Placemark>
+<Placemark><name>P381</name><styleUrl>#style3</styleUrl><Point><coordinates>-50.43,8.67</coordinates></Point></Placemark>
+<Placemark><name>P382</name><styleUrl>#style8</styleUrl><Point><coordinates>124.51,14.48</coordinates></Point></Placemark>
+<Placemark><name>P383</name><styleUrl>#style12</styleUrl><Point><coordinates>-130.83,83.59</coordinates></Point></Placemark>
+<Placemark><name>P384</name><styleUrl>#style5</styleUrl><Point><coordinates>66.91,-89.14</coordinates></Point></Placemark>
+<Placemark><name>P385</name><styleUrl>#style9</styleUrl><Point><coordinates>67.22,21.53</coordinates></Point></Placemark>
+<Placemark><name>P386</name><styleUrl>#style3</styleUrl><Point><coordinates>171.52,-79.54</coordinates></Point></Placemark>
+<Placemark><name>P387</name><styleUrl>#style8</styleUrl><Point><coordinates>-72.94,-40.57</coordinates></Point></Placemark>
+<Placemark><name>P388</name><styleUrl>#style13</styleUrl><Point><coordinates>147,17.37</coordinates></Point></Placemark>
+<Placemark><name>P389</name><styleUrl>#style10</styleUrl><Point><coordinates>-121.89,-17.87</coordinates></Point></Placemark>
+<Placemark><name>P390</name><styleUrl>#style1</styleUrl><Point><coordinates>115.73,-83.14</coordinates></Point></Placemark>
+<Placemark><name>P391</name><styleUrl>#style10</styleUrl><Point><coordinates>133.55,70.72</coordinates></Point></Placemark>
+<Placemark><name>P392</name><styleUrl>#style11</styleUrl><Point><coordinates>-11.1,12.36</coordinates></Point></Placemark>
+<Placemark><name>P393</name><styleUrl>#style15</styleUrl><Point><coordinates>-68.42,37.06</coordinates></Point></Placemark>
+<Placemark><name>P394</name><styleUrl>#style11</styleUrl><Point><coordinates>44.83,9.92</coordinates></Point></Placemark>
+<Placemark><name>P395</name><styleUrl>#style6</styleUrl><Point><coordinates>-24.73,83.47</coordinates></Point></Placemark>
+<Placemark><name>P396</name><styleUrl>#style5</styleUrl><Point><coordinates>38.82,25.79</coordinates></Point></Placemark>
+<Placemark><name>P397</name><styleUrl>#style11</styleUrl><Point><coordinates>7.22,11.63</coordinates></Point></Placemark>
+<Placemark><name>P398</name><styleUrl>#style6</styleUrl><Point><coordinates>-85.97,61.34</coordinates></Point></Placemark>
+<Placemark><name>P399</name><styleUrl>#style3</styleUrl><Point><coordinates>137.83,39.7</coordinates></Point></Placemark>
+<Placemark><name>P400</name><styleUrl>#style12</styleUrl><Point><coordinates>-30.28,-48.69</coordinates></Point></Placemark>
+<Placemark><name>P401</name><styleUrl>#style1</styleUrl><Point><coordinates>146.27,-50.67</coordinates></Point></Placemark>
+<Placemark><name>P402</name><styleUrl>#style1</styleUrl><Point><coordinates>-16.5,30.04</coordinates></Point></Placemark>
+<Placemark><name>P403</name><styleUrl>#style1</styleUrl><Point><coordinates>-81.75,-51.94</coordinates></Point></Placemark>
+<Placemark><name>P404</name><styleUrl>#style11</styleUrl><Point><coordinates>-15.57,67.85</coordinates></Point></Placemark>
+<Placemark><name>P405</name><styleUrl>#style14</styleUrl><Point><coordinates>105.48,20.07</coordinates></Point></Placemark>
+<Placemark><name>P406</name><styleUrl>#style6</styleUrl><Point><coordinates>-124.94,74.08</coordinates></Point></Placemark>
+<Placemark><name>P407</name><styleUrl>#style4</styleUrl><Point><coordinates>-124.94,60.75</coordinates></Point></Placemark>
+<Placemark><name>P408</name><styleUrl>#style8</styleUrl><Point><coordinates>-8.33,59.79</coordinates></Point></Placemark>
+<Placemark><name>P409</name><styleUrl>#style3</styleUrl><Point><coordinates>129.89,87.61</coordinates></Point></Placemark>
+<Placemark><name>P410</name><styleUrl>#style3</styleUrl><Point><coordinates>29.66,42.25</coordinates></Point></Placemark>
+<Placemark><name>P411</name><styleUrl>#style5</styleUrl><Point><coordinates>162.99,-65.55</coordinates></Point></Placemark>
+<Placemark><name>P412</name><styleUrl>#style8</styleUrl><Point><coordinates>178.97,-66.24</coordinates></Point></Placemark>
+<Placemark><name>P413</name><styleUrl>#style3</styleUrl><Point><coordinates>-69.96,28.02</coordinates></Point></Placemark>
+<Placemark><name>P414</name><styleUrl>#style8</styleUrl><Point><coordinates>-66.34,-53.13</coordinates></Point></Placemark>
+<Placemark><name>P415</name><styleUrl>#style5</styleUrl><Point><coordinates>5.49,-31.27</coordinates></Point></Placemark>
+<Placemark><name>P416</name><styleUrl>#style8</styleUrl><Point><coordinates>-89.79,-24.98</coordinates></Point></Placemark>
+<Placemark><name>P417</name><styleUrl>#style14</styleUrl><Point><coordinates>102.54,-76.52</coordinates></Point></Placemark>
+<Placemark><name>P418</name><styleUrl>#style8</styleUrl><Point><coordinates>-120.82,-1.01</coordinates></Point></Placemark>
+<Placemark><name>P419</name><styleUrl>#style12</styleUrl><Point><coordinates>-89.83,-89.66</coordinates></Point></Placemark>
+<Placemark><name>P420</name><styleUrl>#style14</styleUrl><Point><coordinates>122.09,-61.77</coordinates></Point></Placemark>
+<Placemark><name>P421</name><styleUrl>#style2</styleUrl><Point><coordinates>22.17,-59.85</coordinates></Point></Placemark>
+<Placemark><name>P422</name><styleUrl>#style1</styleUrl><Point><coordinates>179.88,14.54</coordinates></Point></Placemark>
+<Placemark><name>P423</name><styleUrl>#style6</styleUrl><Point><coordinates>76.61,17.23</coordinates></Point></Placemark>
+<Placemark><name>P424</name><styleUrl>#style7</styleUrl><Point><coordinates>-11.64,-7.78</coordinates></Point></Placemark>
+<Placemark><name>P425</name><styleUrl>#style13</styleUrl><Point><coordinates>-36.08,8.59</coordinates></Point></Placemark>
+<Placemark><name>P426</name><styleUrl>#style15</styleUrl><Point><coordinates>7.49,-44.07</coordinates></Point></Placemark>
+<Placemark><name>P427</name><styleUrl>#style13</styleUrl><Point><coordinates>-172.96,-49.15</coordinates></Point></Placemark>
+<Placemark><name>P428</name><styleUrl>#style15</styleUrl><Point><coordinates>8.81,86.02</coordinates></Point></Placemark>
+<Placemark><name>P429</name><styleUrl>#style1</styleUrl><Point><coordinates>-128.83,-7.11</coordinates></Point></Placemark>
+<Placemark><name>P430</name><styleUrl>#style9</styleUrl><Point><coordinates>106.9,29.55</coordinates></Point></Placemark>
+<Placemark><name>P431</name><styleUrl>#style8</styleUrl><Point><coordinates>81.47,-3.14</coordinates></Point></Placemark>
+<Placemark><name>P432</name><styleUrl>#style11</styleUrl><Point><coordinates>-92.2,-55.72</coordinates></Point></Placemark>
+<Placemark><name>P433</name><styleUrl>#style5</styleUrl><Point><coordinates>172.74,78.3</coordinates></Point></Placemark>
+<Placemark><name>P434</name><styleUrl>#style4</styleUrl><Point><coordinates>-52.03,-23.9</coordinates></Point></Placemark>
+<Placemark><name>P435</name><styleUrl>#style8</styleUrl><Point><coordinates>-109.59,-69.01</coordinates></Point></Placemark>
+<Placemark><name>P436</name><styleUrl>#style8</styleUrl><Point><coordinates>122.99,-39.42</coordinates></Point></Placemark>
+<Placemark><name>P437</name><styleUrl>#style9</styleUrl><Point><coordinates>30.89,52.06</coordinates></Point></Placemark>
+<Placemark><name>P438</name><styleUrl>#style8</styleUrl><Point><coordinates>-167.08,-39.6</coordinates></Point></Placemark>
+<Placemark><name>P439</name><styleUrl>#style15</styleUrl><Point><coordinates>-49.55,-5.95</coordinates></Point></Placemark>
+<Placemark><name>P440</name><styleUrl>#style15</styleUrl><Point><coordinates>94.45,-86.88</coordinates></Point></Placemark>
+<Placemark><name>P441</name><styleUrl>#style15</styleUrl><Point><coordinates>-129.55,38.71</coordinates></Point></Placemark>
+<Placemark><name>P442</name><styleUrl>#style13</styleUrl><Point><coordinates>9.89,81.07</coordinates></Point></Placemark>
+<Placemark><name>P443</name><styleUrl>#style4</styleUrl><Point><coordinates>-123.88,-47.03</coordinates></Point></Placemark>
+<Placemark><name>P444</name><styleUrl>#style15</styleUrl><Point><coordinates>158.18,39.63</coordinates></Point></Placemark>
+<Placemark><name>P445</name><styleUrl>#style5</styleUrl><Point><coordinates>137.26,-81.29</coordinates></Point></Placemark>
+<Placemark><name>P446</name><styleUrl>#style9</styleUrl><Point><coordinates>128.87,-8.21</coordinates></Point></Placemark>
+<Placemark><name>P447</name><styleUrl>#style9</styleUrl><Point><coordinates>113.32,49.29</coordinates></Point></Placemark>
+<Placemark><name>P448</name><styleUrl>#style12</styleUrl><Point><coordinates>-26.92,0.66</coordinates></Point></Placemark>
+<Placemark><name>P449</name><styleUrl>#style4</styleUrl><Point><coordinates>154.63,71.19</coordinates></Point></Placemark>
+<Placemark><name>P450</name><styleUrl>#style5</styleUrl><Point><coordinates>-41.47,-63.88</coordinates></Point></Placemark>
+<Placemark><name>P451</name><styleUrl>#style7</styleUrl><Point><coordinates>-43.46,53.65</coordinates></Point></Placemark>
+<Placemark><name>P452</name><styleUrl>#style10</styleUrl><Point><coordinates>37.91,47.33</coordinates></Point></Placemark>
+<Placemark><name>P453</name><styleUrl>#style12</styleUrl><Point><coordinates>-14.49,49.91</coordinates></Point></Placemark>
+<Placemark><name>P454</name><styleUrl>#style15</styleUrl><Point><coordinates>-4.2,-18.9</coordinates></Point></Placemark>
+<Placemark><name>P455</name><styleUrl>#style9</styleUrl><Point><coordinates>106.69,-60.38</coordinates></Point></Placemark>
+<Placemark><name>P456</name><styleUrl>#style3</styleUrl><Point><coordinates>-26.68,-18.95</coordinates></Point></Placemark>
+<Placemark><name>P457</name><styleUrl>#style12</styleUrl><Point><coordinates>95.8,33.04</coordinates></Point></Placemark>
+<Placemark><name>P458</name><styleUrl>#style13</styleUrl><Point><coordinates>177.09,83.19</coordinates></Point></Placemark>
+<Placemark><name>P459</name><styleUrl>#style3</styleUrl><Point><coordinates>-111.05,-47.62</coordinates></Point></Placemark>
+<Placemark><name>P460</name><styleUrl>#style4</styleUrl><Point><coordinates>-133.78,-60.37</coordinates></Point></Placemark>
+<Placemark><name>P461</name><styleUrl>#style4</styleUrl><Point><coordinates>82.61,7.45</coordinates></Point></Placemark>
+<Placemark><name>P462</name><styleUrl>#style14</styleUrl><Point><coordinates>107.79,-31.66</coordinates></Point></Placemark>
+<Placemark><name>P463</name><styleUrl>#style8</styleUrl><Point><coordinates>136.51,-60.92</coordinates></Point></Placemark>
+<Placemark><name>P464</name><styleUrl>#style6</styleUrl><Point><coordinates>-130.97,60.59</coordinates></Point></Placemark>
+<Placemark><name>P465</name><styleUrl>#style4</styleUrl><Point><coordinates>86.02,-33.98</coordinates></Point></Placemark>
+<Placemark><name>P466</name><styleUrl>#style3</styleUrl><Point><coordinates>68.57,-61.59</coordinates></Point></Placemark>
+<Placemark><name>P467</name><styleUrl>#style13</styleUrl><Point><coordinates>135.06,7.02</coordinates></Point></Placemark>
+<Placemark><name>P468</name><styleUrl>#style10</styleUrl><Point><coordinates>-90.98,-13.59</coordinates></Point></Placemark>
+<Placemark><name>P469</name><styleUrl>#style2</styleUrl><Point><coordinates>-87.08,51.64</coordinates></Point></Placemark>
+<Placemark><name>P470</name><styleUrl>#style11</styleUrl><Point><coordinates>-129.15,4.8</coordinates></Point></Placemark>
+<Placemark><name>P471</name><styleUrl>#style1</styleUrl><Point><coordinates>135.74,-37.12</coordinates></Point></Placemark>
+<Placemark><name>P472</name><styleUrl>#style8</styleUrl><Point><coordinates>63.2,-73.39</coordinates></Point></Placemark>
+<Placemark><name>P473</name><styleUrl>#style10</styleUrl><Point><coordinates>-110.96,-34.88</coordinates></Point></Placemark>
+<Placemark><name>P474</name><styleUrl>#style9</styleUrl><Point><coordinates>-64.85,-10.7</coordinates></Point></Placemark>
+<Placemark><name>P475</name><styleUrl>#style14</styleUrl><Point><coordinates>25.79,-12.34</coordinates></Point></Placemark>
+<Placemark><name>P476</name><styleUrl>#style2</styleUrl><Point><coordinates>108.1,22.1</coordinates></Point></Placemark>
+<Placemark><name>P477</name><styleUrl>#style12</styleUrl><Point><coordinates>64.49,80.07</coordinates></Point></Placemark>
+<Placemark><name>P478</name><styleUrl>#style11</styleUrl><Point><coordinates>23,-0.82</coordinates></Point></Placemark>
+<Placemark><name>P479</name><styleUrl>#style8</styleUrl><Point><coordinates>-15.74,36.22</coordinates></Point></Placemark>
+<Placemark><name>P480</name><styleUrl>#style4</styleUrl><Point><coordinates>12.49,72.33</coordinates></Point></Placemark>
+<Placemark><name>P481</name><styleUrl>#style4</styleUrl><Point><coordinates>-71.71,69.33</coordinates></Point></Placemark>
+<Placemark><name>P482</name><styleUrl>#style3</styleUrl><Point><coordinates>-146.52,40.53</coordinates></Point></Placemark>
+<Placemark><name>P483</name><styleUrl>#style2</styleUrl><Point><coordinates>-104.39,31.27</coordinates></Point></Placemark>
+<Placemark><name>P484</name><styleUrl>#style9</styleUrl><Point><coordinates>121.8,64.93</coordinates></Point></Placemark>
+<Placemark><name>P485</name><styleUrl>#style9</styleUrl><Point><coordinates>-81.41,71.83</coordinates></Point></Placemark>
+<Placemark><name>P486</name><styleUrl>#style7</styleUrl><Point><coordinates>177.44,19.42</coordinates></Point></Placemark>
+<Placemark><name>P487</name><styleUrl>#style15</styleUrl><Point><coordinates>61.48,-72.99</coordinates></Point></Placemark>
+<Placemark><name>P488</name><styleUrl>#style7</styleUrl><Point><coordinates>-121.62,41.28</coordinates></Point></Placemark>
+<Placemark><name>P489</name><styleUrl>#style9</styleUrl><Point><coordinates>23.29,33.18</coordinates></Point></Placemark>
+<Placemark><name>P490</name><styleUrl>#style6</styleUrl><Point><coordinates>26.49,-72.77</coordinates></Point></Placemark>
+<Placemark><name>P491</name><styleUrl>#style3</styleUrl><Point><coordinates>-123.29,-51.79</coordinates></Point></Placemark>
+<Placemark><name>P492</name><styleUrl>#style15</styleUrl><Point><coordinates>-129.75,-65.85</coordinates></Point></Placemark>
+<Placemark><name>P493</name><styleUrl>#style4</styleUrl><Point><coordinates>166.77,76.37</coordinates></Point></Placemark>
+<Placemark><name>P494</name><styleUrl>#style9</styleUrl><Point><coordinates>48.2,-26.59</coordinates></Point></Placemark>
+<Placemark><name>P495</name><styleUrl>#style14</styleUrl><Point><coordinates>101.1,23.12</coordinates></Point></Placemark>
+<Placemark><name>P496</name><styleUrl>#style12</styleUrl><Point><coordinates>176.32,1.5</coordinates></Point></Placemark>
+<Placemark><name>P497</name><styleUrl>#style1</styleUrl><Point><coordinates>84.07,43.26</coordinates></Point></Placemark>
+<Placemark><name>P498</name><styleUrl>#style14</styleUrl><Point><coordinates>-24.61,19.53</coordinates></Point></Placemark>
+<Placemark><name>P499</name><styleUrl>#style1</styleUrl><Point><coordinates>-33.85,51.79</coordinates></Point></Placemark>
+<Placemark><name>P500</name><styleUrl>#style12</styleUrl><Point><coordinates>-82.17,64.37</coordinates></Point></Placemark>
+</Document></kml>
