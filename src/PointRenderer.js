@@ -363,8 +363,9 @@ GlobWeb.PointRenderer.prototype.render = function()
 				w /= dist;
 				h /= dist;
 				scale /= dist;
-				if ( h < 30 && dist >2 ) continue;
 			}
+
+			if ( h < 30 && dist > 2 ) continue;
 			
 			// 2.0 * because normalized device coordinates goes from -1 to 1
 			var scale2 = [2.0 * w / renderContext.canvas.width,

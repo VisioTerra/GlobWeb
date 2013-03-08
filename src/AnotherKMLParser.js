@@ -455,9 +455,6 @@ GlobWeb.AnotherKMLParser = (function()
             var id = node.getAttribute("id");
             for (var j=0, jlen=pairs.length; j<jlen; j++) {
                 var pair = pairs[j];
-                // Use the shortcut in the SLD format to quickly retrieve the 
-                // value of a node. Maybe it's good to have a method in 
-                // Format.XML to do this
                 var key = parseProperty(pair, "*", "key");
                 var styleUrl = parseProperty(pair, "*", "styleUrl");
 
@@ -489,7 +486,7 @@ GlobWeb.AnotherKMLParser = (function()
                 fetched[href] = true; // prevent reloading the same urls
                 var data = fetchLink(href);
                 if (data) {
-            		featureCollection.features = featureCollection.features.concat(parse(data).features);
+            		parse(data);
                 }
             } 
         }
