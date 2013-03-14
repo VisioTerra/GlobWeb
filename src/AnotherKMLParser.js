@@ -518,7 +518,7 @@ GlobWeb.AnotherKMLParser = (function()
 	{
 		// Loop throught the following node types in this order and
         // process the nodes found 
-        var types = ["Link", "NetworkLink", "Style", "StyleMap", "Placemark"];
+        var types = ["NetworkLink", "Style", "StyleMap", "Placemark"];
         for(var i=0, len=types.length; i<len; ++i) {
             var type = types[i];
 
@@ -532,11 +532,9 @@ GlobWeb.AnotherKMLParser = (function()
             switch (type.toLowerCase()) {
 
 	            // Fetch external links 
-	            case "link":
 	            case "networklink":
 	                parseLinks(nodes);
 	                break;
-
                 // parse style information
                 case "style":
                     parseStyles(nodes);
