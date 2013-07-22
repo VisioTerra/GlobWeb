@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>GlobWeb example</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="GlobWeb.css">
+
+<script type="text/javascript" src="require.min.js"></script>
+
+
+<script type="text/javascript">
+	
+	
+	require(['../src/GlobWeb', '../src/GoogleMouseNavigationHandler', '../src/KMLLayer'], function (GlobWeb, GoogleMouseNavigationHandler, KMLLayer) 
+	{	
+		var cvs = document.getElementById("GlobWebCanvas");
+		cvs.width = window.innerWidth;
+		cvs.width = 1280;
+		cvs.height = window.innerHeight;
+		cvs.height = 720;
+
+		// Create the globe
+		var globe = new GlobWeb.Globe( { canvas: cvs,
+		lighting: false,
+		tileErrorTreshold: 3,
+		continuousRendering: true } );
+
+		var GMHandler = new GoogleMouseNavigationHandler();
+
+		// Add mouse navigation
+		//var navigation = new GlobWeb.Navigation(globe, {handlers: [GMHandler], inertia: false });
+		var navigation = new GlobWeb.Navigation(globe, {inertia: false });
+
+		// Add stats
+		//var stats = new GlobWeb.Stats( globe, {element: 'fps', verbose: false} );
+
+		var blueMarbleLayer = new GlobWeb.WMSLayer({ 
+			baseUrl: "http://demonstrator.vegaspace.com/wmspub", 
+			layers: "BlueMarble"
+		});
+		
+		globe.setBaseImagery(blueMarbleLayer);
+		var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.vegaspace.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
+		globe.setBaseElevation( elevationLayer );
+
+		var layer = new KMLLayer({url : 'http://visioterra.org/VTAOIWatcher/vtaoiwatcher/MonitoredAreaServlet?Request=getKML&ID=gibraltar&EOP=ENVISAT_ASAR_IMM_1P_20111222_102257_20111222_102829_ENVISAT_ASAR_STA'});
+		globe.addLayer(layer);
+
+		var layer = new KMLLayer({url : 'http://visioterra.org/VTAOIWatcher/vtaoiwatcher/MonitoredAreaServlet?Request=getKML&ID=France_2001&EOP=Landsat-7_ETM_SLC-on_20010113_104326_20010113_104353_LANDSAT_STA_RGB'});
+		globe.addLayer(layer);
+		
+		var layer = new KMLLayer({url : 'http://visioterra.org/VTAOIWatcher/vtaoiwatcher/MonitoredAreaServlet?Request=getKML&ID=France_2001&EOP=Landsat-7_ETM_SLC-on_20010525_101939_20010525_102006_LANDSAT_STA_RGB'});
+		globe.addLayer(layer);
+		
+		var layer = new KMLLayer({url : 'http://visioterra.org/VTAOIWatcher/vtaoiwatcher/MonitoredAreaServlet?Request=getKML&ID=France_2001&EOP=Landsat-7_ETM_SLC-on_20010731_104841_20010731_104908_LANDSAT_STA_RGB'});
+		globe.addLayer(layer);
+		
+	});
+
+</script>
+
+</head>
+
+	<body>
+		<canvas id="GlobWebCanvas" style="border: none;" width="1024" height="768"></canvas> 
+		<br/>
+		<!--<div id="fps"><span style="font-weight:bold">FPS : 0</span></div>-->
+	</body>
+
+</html>
+
