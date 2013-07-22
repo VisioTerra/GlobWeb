@@ -154,7 +154,13 @@ var TileRequest = function(tileManager)
 		
 		_imageLoaded = false;
 		// Launch the request
-		if ( tileManager.imageryProvider.customLoad )
+		if (tileManager.imageryProvider.hasNoOverlay)
+		{
+			this.image = {};
+			this.image.hasImage = false;
+			_handleLoadedImage();
+		}
+		else if ( tileManager.imageryProvider.customLoad )
 		{
 			tileManager.imageryProvider.customLoad(this, tileManager.imageryProvider.getUrl(tile), _handleLoadedImage, _handleErrorImage);
 		}
@@ -167,6 +173,7 @@ var TileRequest = function(tileManager)
 			this.image.onerror = _handleErrorImage;
 			this.image.onabort = _handleAbort;
 			this.image.src = tileManager.imageryProvider.getUrl(tile);
+			this.image.hasImage = true;
 		}
 	    
 	};

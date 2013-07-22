@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<title>GlobWeb example</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="GlobWeb.css">
+
+<script type="text/javascript" src="require.min.js"></script>
+
+
+<script type="text/javascript">
+	
+require(['../src/GlobWeb',  '../src/NoImageLayer', '../src/KMLLayer', '../src/TileWireframeLayer'], function (GlobWeb, NoImageLayer, KMLLayer, TileWireframeLayer) 
+{	
+	var cvs = document.getElementById("GlobWebCanvas");
+	cvs.width = window.innerWidth;
+	cvs.width = 1280;
+	cvs.height = window.innerHeight;
+	cvs.height = 720;
+
+	// Create the globe
+	var globe = new GlobWeb.Globe( { canvas: cvs,
+	lighting: false,
+	tileErrorTreshold: 3,
+	continuousRendering: true } );
+
+
+	// Add mouse navigation
+	var navigation = new GlobWeb.Navigation(globe, {inertia: false });
+
+	
+	var noLayer = new NoImageLayer({ 	});
+		
+	globe.setBaseImagery(noLayer);
+	/**/
+	var elevationLayer = new GlobWeb.WCSElevationLayer({ baseUrl:"http://demonstrator.vegaspace.com/wcspub", coverage: "GTOPO", version: "1.0.0"});
+	globe.setBaseElevation( elevationLayer );
+	/**/
+
+	var blueMarbleLayer = new GlobWeb.WMSLayer({ 
+			baseUrl: "http://demonstrator.vegaspace.com/wmspub", 
+			layers: "BlueMarble"
+		});
+		//globe.addLayer(blueMarbleLayer);
+	/**/
+	var layer = new KMLLayer({url : 'http://visioterra.org/VTAOIWatcher/vtaoiwatcher/MonitoredAreaServlet?Request=getKML&ID=gibraltar&EOP=ENVISAT_ASAR_IMM_1P_20111222_102257_20111222_102829_ENVISAT_ASAR_STA'});
+	globe.addLayer(layer)	
+		
+
+	var wireframelayer = new TileWireframeLayer({outline: true}) ;
+	globe.addLayer( wireframelayer);
+	/**/
+	
+	var vis = true;
+	document.onkeypress = function(event){
+
+		vis = !vis;
+
+		//wireframelayer.visible( vis);
+		if (vis)
+			globe.setBaseImagery(noLayer)
+		else
+			globe.setBaseImagery(blueMarbleLayer);
+
+	}
+	
+});
+    
+
+
+</script>
+
+</head>
+
+
+<body>
+<!--	<h1>Glob Web</h1>-->
+    <canvas id="GlobWebCanvas" style="border: none;" width="1024" height="768"></canvas> 
+  	<br/>
+	<!--<div id="fps"><span style="font-weight:bold">FPS : 0</span></div>-->
+</body>
+
+</html>
+

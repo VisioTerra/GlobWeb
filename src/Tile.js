@@ -250,7 +250,8 @@ Tile.prototype.dispose = function(renderContext,tilePool)
 	if ( this.state == Tile.State.LOADED  )
 	{
 		tilePool.disposeGLBuffer(this.vertexBuffer);
-		tilePool.disposeGLTexture(this.texture);
+		if(this.texture)
+			tilePool.disposeGLTexture(this.texture);
 		
 		for ( var x in this.extension )
 		{
@@ -426,7 +427,7 @@ Tile.prototype.generate = function(tilePool,image,elevations)
 	this.vertexBuffer = tilePool.createGLBuffer(this.vertices);
 
 	// Create texture
-	if (image)
+	if (image && image.hasImage)
 	{
 		this.texture = tilePool.createGLTexture(image);
 	}

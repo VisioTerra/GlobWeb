@@ -505,57 +505,58 @@ TileManager.prototype.processTile = function(tile,level)
 	var currentIB = null;
 	
 	var currentTextureTransform = null;
-	
-	for ( var i = 0; i < this.tilesToRender.length; i++ )
+	if (!this.imageryProvider.hasNoOverlay)
 	{
-		var tile = this.tilesToRender[i];
-		
-		var isLoaded = ( tile.state == Tile.State.LOADED );
-		var isLevelZero = ( tile.parentIndex == -1 );
-		
-		// Bind tile texture
-		var textureTransform;
-		if ( !isLoaded && isLevelZero )
+		for ( var i = 0; i < this.tilesToRender.length; i++ )
 		{
-			// The texture is not yet loaded but there is a full texture to render the tile
-			gl.bindTexture(gl.TEXTURE_2D, this.levelZeroTexture);
-			textureTransform = tile.texTransform;
-		}
-		else
-		{
-			gl.bindTexture(gl.TEXTURE_2D, tile.texture);
-			textureTransform = this.identityTextureTransform;
-		}
+			var tile = this.tilesToRender[i];
+			
+			var isLoaded = ( tile.state == Tile.State.LOADED );
+			var isLevelZero = ( tile.parentIndex == -1 );
+			
+			// Bind tile texture
+			var textureTransform;
+			if ( !isLoaded && isLevelZero )
+			{
+				// The texture is not yet loaded but there is a full texture to render the tile
+				gl.bindTexture(gl.TEXTURE_2D, this.levelZeroTexture);
+				textureTransform = tile.texTransform;
+			}
+			else
+			{
+				gl.bindTexture(gl.TEXTURE_2D, tile.texture);
+				textureTransform = this.identityTextureTransform;
+			}
+			
+			// Update texture transform
+			if ( currentTextureTransform != textureTransform )
+			{
+				gl.uniform4f(this.program.uniforms["texTransform"], textureTransform[0], textureTransform[1], textureTransform[2], textureTransform[3]);
+				currentTextureTransform = textureTransform;
+			}
 		
-		// Update texture transform
-		if ( currentTextureTransform != textureTransform )
-		{
-			gl.uniform4f(this.program.uniforms["texTransform"], textureTransform[0], textureTransform[1], textureTransform[2], textureTransform[3]);
-			currentTextureTransform = textureTransform;
-		}
-	
-		// Update uniforms for modelview matrix
-		mat4.multiply( rc.viewMatrix, tile.matrix, rc.modelViewMatrix );
-		gl.uniformMatrix4fv(this.program.uniforms["modelViewMatrix"], false, rc.modelViewMatrix);
-	
-		// Bind the vertex buffer
-		gl.bindBuffer(gl.ARRAY_BUFFER, tile.vertexBuffer);
-		gl.vertexAttribPointer(attributes['vertex'], 3, gl.FLOAT, false, 4*this.tileConfig.vertexSize, 0);
-		if (this.tileConfig.normals)
-			gl.vertexAttribPointer(attributes['normal'], 3, gl.FLOAT, false, 4*this.tileConfig.vertexSize, 12);
-				
-		var indexBuffer = ( isLoaded || isLevelZero ) ? this.tileIndexBuffer.getSolid() : this.tileIndexBuffer.getSubSolid(tile.parentIndex);
-		// Bind the index buffer only if different (index buffer is shared between tiles)
-		if ( currentIB != indexBuffer )
-		{	
-			gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-			currentIB = indexBuffer;
-		}
+			// Update uniforms for modelview matrix
+			mat4.multiply( rc.viewMatrix, tile.matrix, rc.modelViewMatrix );
+			gl.uniformMatrix4fv(this.program.uniforms["modelViewMatrix"], false, rc.modelViewMatrix);
 		
-		// Finally draw the tiles
-		gl.drawElements(gl.TRIANGLES, currentIB.numIndices, gl.UNSIGNED_SHORT, 0);
+			// Bind the vertex buffer
+			gl.bindBuffer(gl.ARRAY_BUFFER, tile.vertexBuffer);
+			gl.vertexAttribPointer(attributes['vertex'], 3, gl.FLOAT, false, 4*this.tileConfig.vertexSize, 0);
+			if (this.tileConfig.normals)
+				gl.vertexAttribPointer(attributes['normal'], 3, gl.FLOAT, false, 4*this.tileConfig.vertexSize, 12);
+					
+			var indexBuffer = ( isLoaded || isLevelZero ) ? this.tileIndexBuffer.getSolid() : this.tileIndexBuffer.getSubSolid(tile.parentIndex);
+			// Bind the index buffer only if different (index buffer is shared between tiles)
+			if ( currentIB != indexBuffer )
+			{	
+				gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+				currentIB = indexBuffer;
+			}
+			
+			// Finally draw the tiles
+			gl.drawElements(gl.TRIANGLES, currentIB.numIndices, gl.UNSIGNED_SHORT, 0);
+		}
 	}
-	
 	for (var i=0; i < this.postRenderers.length; i++ )
 	{
 		if (this.postRenderers[i].needsOffset)
