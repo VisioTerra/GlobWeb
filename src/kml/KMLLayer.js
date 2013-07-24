@@ -1,5 +1,5 @@
 
- define( ['./VectorLayer', './GeoBound', './KMLParser2', './KMLRenderer', './RegularOverlaysRenderer', './FeatureStyle', './Tile', './KMLObjects'], function(VectorLayer, GeoBound, KMLParser, KMLRenderer, RegularOverlaysRenderer, FeatureStyle, Tile, KMLObjects) {
+ define( ['../VectorLayer', '../GeoBound', './KMLParser2', './KMLRenderer', '../RegularOverlaysRenderer', '../FeatureStyle', '../Tile', './KMLObjects'], function(VectorLayer, GeoBound, KMLParser, KMLRenderer, RegularOverlaysRenderer, FeatureStyle, Tile, KMLObjects) {
  
 	var KMLLayer = function(options)
 	{

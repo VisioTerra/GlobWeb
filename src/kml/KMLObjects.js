@@ -1,4 +1,4 @@
-define(['./Utils'], function(Utils){
+define(['../Utils'], function(Utils){
 	/*************************        KMLAbstractObject        ********************************************/
 	var KMLAbstractObject = function()
 	{
